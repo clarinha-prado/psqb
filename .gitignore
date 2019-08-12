@@ -59,3 +59,12 @@ typings/
 
 # next.js build output
 .next
+
+# react js
+.idea/
+.vscode/
+build
+.DS_Store
+template/src/__tests__/__snapshots__/
+lerna-debug.log
+/.changelog
