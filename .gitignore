@@ -68,3 +68,9 @@ build
 template/src/__tests__/__snapshots__/
 lerna-debug.log
 /.changelog
+
+#sass
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
