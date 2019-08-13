@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+<style>
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.5s 0.5s ease-in-out;
+  transition: all 0.5s 0.5s ease-in-out;
+}
+
+.modal-content {
+  padding: 10px;
+  max-width: 600px;
+  min-width: 360px;
+  max-height: 85%;
+  overflow: auto;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  z-index: 2;
+  opacity: 0;
+  border-radius: 3px;
+  background: #fff;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}        
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-close:after {
+  content: "X";
+  float: right;
+  margin: 5px 5px 0 0;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 20px;
+  box-shadow: 0 0 3px #000;
+}
+</style>        
+        
+    </head>
+    <body class="modal">
+  <div class="modal-content">
+        <input type="checkbox" id="modal__fechar" />
+        <label class="modal-close" for="modal_fechar"></label>
+
+        <div>
+            <p>Adicionar bolsa</p>
+            <p>Filtre e adicione as bolsas de seu interesse.</p>
+        </div>
+        <div class="filtro">
+            <input>SELECIONE SUA CIDADE</input>
+            SELECIONE O CURSO DE SUA PREFERÊNCIA
+            COMO VOCÊ QUER ESTUDAR?
+            Presencial
+            A distância
+            ATÉ QUANTO PODE PAGAR?
+            R$10.000
+        </div>
+        <div class="bolsas-disp">
+            Resultado:
+            Ordenar por Nome da Faculdade
+            checkbox
+            logo
+            curso / tipo 
+            Bolsa de [percentual]
+            oferta / mês
+        </div>
+
+        <div class="botoes">
+            Cancelar
+            Adicionar bolsa(s)
+        </div>
+  </div>
+    </body>
+</html>

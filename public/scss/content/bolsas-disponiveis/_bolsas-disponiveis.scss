@@ -1,0 +1,26 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 12, 2019, 9:13:19 PM
+    Author     : Clarinha
+*/
+@import "../../_variables.scss";
+@import "_bolsa-disp.scss";
+
+.bolsas-disponiveis {
+    display: block;
+    flex-wrap: wrap;
+    border: 1px magenta solid;
+    justify-content: flex-start;
+}
+
+.bolsa-disp {
+    display: flex;
+    padding: 13px;
+    border: 1px solid;
+}
+
+

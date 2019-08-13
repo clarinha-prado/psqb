@@ -1,0 +1,29 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 10, 2019, 12:41:04 PM
+    Author     : Clarinha
+*/
+@import "_header.scss";
+@import "_menu.scss";
+@import "content/_content.scss";
+@import "_footer.scss";
+
+.site-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial nova,Helvetica,Arial,sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.modal {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial nova,Helvetica,Arial,sans-serif;
+}

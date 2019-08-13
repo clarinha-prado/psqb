@@ -1,0 +1,52 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 11, 2019, 8:33:53 PM
+    Author     : Clarinha
+*/
+@import "../../_variables.scss";
+@import "_bolsa-fav.scss";
+
+.bolsas-favoritas {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px magenta solid;
+    justify-content: flex-start;
+}
+
+.bolsa-fav {
+    width: 236px;
+    height: 380px;
+    display: block;
+    padding: 13px;
+    border: 1px solid;
+    border-color: gainsboro;
+    box-shadow: -2px 2px 2px 0 #eeefef;
+    margin-right: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.bolsa-add__icon {
+    color: $azul-principal;
+    font-size: 55px;
+    margin-top: 50%;
+    margin-bottom: 15%;
+}
+
+.bolsa-add__title {
+    color: $preto;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    line-height: 0px;
+}
+
+.bolsa-add__text {
+    color: $preto;
+    font-size: 12px;
+    line-height: 20px;
+}

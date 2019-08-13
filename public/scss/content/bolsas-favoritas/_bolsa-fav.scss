@@ -1,0 +1,141 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 12, 2019, 5:47:52 PM
+    Author     : Clarinha
+*/
+@import "../../_variables.scss";
+
+.bolsa-fav__logo-escola {
+    height: 40px;
+    margin-top: 2px;
+    margin-bottom: 16px;
+}
+
+.bolsa-fav__escola {
+    font-size: 11px;
+    line-height: 5px;
+    color: $preto;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.bolsa-fav__curso {
+    font-size: 15px;
+    line-height: 5px;
+    color: $azul-secundario;
+    font-weight: bold;
+}
+
+.bolsa-fav__avaliacao {
+    font-size: 15px;
+    line-height: 12px;
+    color: $preto;
+    font-weight: bold;
+    margin-top: 20px;
+    vertical-align: middle;
+}
+
+.bolsa-fav__estrelas {
+    color: $amarelo-principal;
+    font-size: 12px;
+    font-stretch: ultra-expanded;
+    vertical-align: top;
+}
+
+.bolsa-fav__preco {
+    font-size: 11px;
+    line-height: 6px;
+    color: $preto;
+    text-decoration: line-through;
+}
+
+.bolsa-fav__oferta {
+    font-size: 16px;
+    line-height: 8px;
+    color: $verde;
+    font-weight: bold;
+    margin-bottom: 17px;
+}
+
+.bolsa-fav__oferta-period {
+    font-size: 11px;
+    line-height: 11px;
+    color: $preto;
+}
+
+.bolsa-fav__botao {
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 13px;
+    font-weight: bold;
+    height: 28px;
+}
+
+.bolsa-fav__botao-excluir {
+    border-color: $azul-secundario;
+    background-color: white;
+    color: $azul-secundario;
+    width: 76px;
+    margin-right: 3px;
+}
+
+.bolsa-fav__botao-oferta {
+    width: 110px;
+}
+
+.bolsa-fav__botao-oferta_selected {
+    border-color: $amarelo-secundario;
+    background-color: $amarelo-principal;
+    color: $preto;
+}
+
+.bolsa-fav__botao-oferta_unselected {
+    border-color: $preto-suave;
+    background-color: gainsboro;
+    color: $preto-suave;
+}
+
+.bolsa-fav__inicio{
+    font-size: 11px;
+    line-height: 11px;
+    color: $preto;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.bolsa-fav__titulo-indisp{
+    font-size: 11px;
+    line-height: 0px;
+    margin-bottom: 15px;
+    font-weight: 900;
+    color: $preto;
+}
+
+.bolsa-fav__aviso-indisp{
+    font-size: 11px;
+    line-height: 23px;
+    color: $preto;
+}
+
+.bolsa-fav__text-bold{
+    font-size: 11px;
+    line-height: 0px;
+    margin-bottom: 22px;
+    font-weight: 900;
+    color: $preto;
+}
+
+.bolsafav__separator {
+  display: block;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 22px;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: #eeefef;
+}
