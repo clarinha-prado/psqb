@@ -11,43 +11,36 @@ and open the template in the editor.
 @import "_variables.scss";
 
 .footer {
-    webkit-box-align: center;
-    webkit-align-items: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -webkit-flex;
     display: flex;
-    margin-right: -15px;
-    webkit-box-pack: justify;
-    webkit-justify-content: space-between;
+    margin-right: $site-margin;
+    margin-left: $site-margin;
+    margin-top: 100px;
     justify-content: space-between;
-    position: relative;
 }
 
 .footer__column {
-    webkit-align-self: stretch;
-    align-self: stretch;
-    webkit-box-align: center;
-    webkit-align-items: center;
     align-items: center;
-    display: -webkit-box;
-    display: -webkit-flex;
     display: flex;
-    font-size: 1rem;
 }
 
 .footer__text {
     font-weight: 700;
-    text-decoration: none;
     color: $azul-secundario;
 }
 
 .footer__text_regular {
-    font-size: .9375rem;
-    line-height: .9375rem;
+    font-size: 10px;
+    line-height: 10px;
 }
 
 .footer__text_small {
-    font-size: .7375rem;
-    line-height: .7375rem;
+    font-size: 8px;
+    line-height: 8px;
 }
+
+.header__icon {
+    color: $azul-principal;
+    font-size: 20px;
+    margin: 5px;
+    }
+

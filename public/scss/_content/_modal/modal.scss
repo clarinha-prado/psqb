@@ -12,7 +12,7 @@ and open the template in the editor.
 
 /* The Modal (background) */
 .modal {
-  display: block; /* Hidden by default */   // mudar para "none" qdo terminar o desenv da modal
+  display: none; /* Hidden by default */   // mudar para "none" qdo terminar o desenv da modal
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 35px; /* Location of the box */
