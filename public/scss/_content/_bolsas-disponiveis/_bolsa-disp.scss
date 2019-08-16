@@ -1,0 +1,74 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 12, 2019, 9:13:44 PM
+    Author     : Clarinha
+*/
+@import "../../_variables.scss";
+
+.bolsa-disp__escola-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none; 
+    background-color: white;
+    outline: none;
+    width: 100%;
+  height: 30px;
+  padding-right: 20px;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+  border-color: white;
+display: block;
+line-height: 1.42857143;
+}
+
+.bolsa-disp__escola-select::-ms-expand {
+    display: none;
+    outline: none;
+}
+.bolsa-disp__escola-select + i.fa {
+        float: right;
+        margin-top: -39px;
+        margin-right: 10px;
+        /* this is so when you click on the chevron, your click actually goes on the dropdown menu */
+        pointer-events: none;
+        /* everything after this is just to cover up the original arrow */
+        /* (for browsers that don't support the syntax used above) */
+        background-color: transparent;
+        color:black!important;
+        padding-right: 5px;
+}
+   .bolsa-disp__escola-select option{
+       padding-right: 21px;
+   }
+
+   .bolsa-disp__curso {
+    color: $azul-secundario;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+   .bolsa-disp__tipo {
+    color: $preto;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+   .bolsa-disp__preco {
+    color: $verde;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+   .bolsa-disp__texto {
+    color: $preto;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+

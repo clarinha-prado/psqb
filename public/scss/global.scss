@@ -9,13 +9,13 @@ and open the template in the editor.
 */
 @import "_header.scss";
 @import "_menu.scss";
-@import "content/_content.scss";
+@import "_content/_content.scss";
 @import "_footer.scss";
 
 .site-page {
     max-width: 1200px;
     margin: 0 auto;
-    font-family: Arial nova,Helvetica,Arial,sans-serif;
+    font-family: Verdana,Helvetica,Arial,sans-serif;
 }
 
 * {
@@ -25,5 +25,5 @@ and open the template in the editor.
 .modal {
     max-width: 1200px;
     margin: 0 auto;
-    font-family: Arial nova,Helvetica,Arial,sans-serif;
+    font-family: Verdana,Helvetica,Arial,sans-serif;
 }

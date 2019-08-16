@@ -9,7 +9,6 @@
     <link rel="apple-touch-icon" href="logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="stylesheet" type="text/css" href="./css/global.css"/> 
-    <link rel="stylesheet" type="text/css" href="./css/modal.css"/> 
 
     <script src="https://kit.fontawesome.com/f5f57af4b4.js"></script>
     <!--
@@ -83,7 +82,7 @@
             </article>
 
             <article class="bolsa-fav">
-                <img class="bolsa-fav__logo-escola" style="text-align:center;" src="./img/anhanguera - copy.png" alt="Anhanguera"/>
+                <img class="bolsa-fav__logo-escola" style="text-align:center;" src="./img/anhanguera.png" alt="Anhanguera"/>
                 <p class="bolsa-fav__escola">ANHANGUERA</p>
                 <p class="bolsa-fav__curso">Arquitetura e Urbanismo</p>
                 <p class="bolsa-fav__avaliacao">3.8
@@ -104,7 +103,7 @@
             </article>
 
             <article class="bolsa-fav">
-                <img class="bolsa-fav__logo-escola" style="text-align:center;" src="./img/anhanguera - copy.png" alt="Anhanguera"/>
+                <img class="bolsa-fav__logo-escola" style="text-align:center;" src="./img/anhanguera.png" alt="Anhanguera"/>
                 <p class="bolsa-fav__escola">ANHANGUERA</p>
                 <p class="bolsa-fav__curso">Arquitetura e Urbanismo</p>
                 <p class="bolsa-fav__avaliacao">3.8
@@ -155,54 +154,110 @@
         </div>
     </footer>
     
-    <!----------------------------------------------------- The Modal ------------------------------------------------------------->
+    <!-- -------------------------------------------------- The Modal ---------------------------------------------------------- -->
     <div id="myModal" class="modal">
 
       <!-- Modal content -->
-        <div class="modal-header">
-          <p class="close">&times;</p>
-        </div>
+      <div class="modal-header">
+        <p class="modal__close">&times;</p>
+      </div>
       <div class="modal-content">
-        <p class="modal__title">Adicionar bolsa<br>
-            <span class="modal__text">Filtre e adicione as bolsas de seu interesse.</span>
-        </p>
-        <div class="modal_filtro">
-            <label for="fname">SELECIONE SUA CIDADE</label>
-            <input type="text" class="modal__input" id="fname" name="firstname">
-
-            <label for="fname">SELECIONE O CURSO DE SUA PREFERÊNCIA</label>
-            <input type="text" class="modal__input" id="fname" name="firstname">
-
-            <label for="fname">COMO VOCÊ QUER ESTUDAR?</label>
-            Presencial
-            A distância
-
-            <label for="fname">ATÉ QUANTO PODE PAGAR?</label>
-            R$10.000
-        </div>
-        <div class="bolsas-disponiveis">
-            <div class="bolsa-disp__header">
-                Resultado:
-                Ordenar por Nome da Faculdade
+          <div class="modal__title">Adicionar bolsa</div>
+          <div class="modal__text">Filtre e adicione as bolsas de seu interesse.</div>
+        <div class="filtro-bolsas">
+            <div class="filtro__field-container">
+                <label class="filtro__field-caption" for="fname">SELECIONE SUA CIDADE</label><br>
+                <input type="text" class="filtro__input filtro__field-content" id="fname" name="cidade" value="São José dos Campos">
             </div>
-
-            <div class="bolsa-disp__header">
-                checkbox
-                logo
-                curso / tipo 
-                Bolsa de [percentual]
-                oferta / mês
+            
+            <div class="filtro__field-container">
+                <label class="filtro__field-caption" for="fname">SELECIONE O CURSO DE SUA PREFERÊNCIA</label><br>
+                <select class="filtro__select  filtro__field-content" name="curso">
+                    <option value="au">Australia</option>
+                    <option value="ca">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+                <i class="fa fa-chevron-down" style="color:black"></i>
             </div>
-        </div>
+            
+            <div class="filtro__field-container">
+                <label class="filtro__field-caption" for="fname">COMO VOCÊ QUER ESTUDAR?</label><br>
+                    <i class="fas fa-check-square filtro__checkbox filtro__checkbox_checked"></i>
+                    <span class="filtro__checkbox-text">Presencial</span>
+                    <i class="far fa-square filtro__checkbox filtro__checkbox_unchecked"></i>
+                    <span class="filtro__checkbox-text">A distância</span>
+            </div>
+            
+            <div class="filtro__field-container">
+                <label class="filtro__field-caption" for="fname">ATÉ QUANTO PODE PAGAR?</label><br>
+                  <span style="line-height: 27px;font-size: 12px;;">R$<span class="filtro__caption" id="demo"></span></span>
+                  <input type="range" min="100" max="10000" value="10000" class="filtro__slider" id="mensalidade">
 
-        <div class="botoes">
-            Cancelar
-            Adicionar bolsa(s)
+                <script>
+                //() => {separador-milhar(y.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
+                var slider = document.getElementById("mensalidade");
+                var sliderValue = document.getElementById("demo");
+                var valorFormatado = slider.value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+                sliderValue.innerHTML = valorFormatado;
+
+                slider.oninput = function() {
+                  var valorFormatado = slider.value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+                  sliderValue.innerHTML = valorFormatado;
+                }
+                </script>              
+            </div>
+              
+              
+            <div class="bolsas-disponiveis">
+                 <div class="bolsa-disp__row">
+                   <div style="display:block;" class="bolsa-disp__header-text">Resultado:</div>
+                   <div style="display:block;margin-left: auto;width:92px;" class="bolsa-disp__header-text">Ordenar por</div>
+                   
+                   <div style="display: inline;width:160px;text-align: right;color:blue;" class="bolsa-disp__header-text"> 
+                        <select class="bolsa-disp__escola-select bolsa-disp__header-text" style="color:blue;" name="curso">
+                            <option value="au" class="bolsa-disp__header-text">
+                                Nome da Faculdade
+                            </option>
+                             <option value="ca" class="bolsa-disp__header-text">Preço</option>
+                             <option value="usa" class="bolsa-disp__header-text">Curso</option>
+                         </select>
+                         <i class="fa fa-chevron-down" style="color:black"></i>
+                   </div>
+                </div>
+
+                 <div class="bolsa-disp__row">
+                   <div style="display:block;width:7%;text-align: left;">
+                        <i class="fas fa-check-square filtro__checkbox filtro__checkbox_checked" style="margin: auto;"></i>
+                   </div>
+                   <div style="display:block;width:22%;text-align: left;">
+                        <img class="bolsa-fav__logo-escola" style="text-align:center;width:95px;height:25px;margin: auto;" src="./img/anhanguera.png" alt="Anhanguera"/>
+                   </div>
+                     <div style="display:block;width:31%;text-align: left;" class="bolsa-disp__curso">Sistemas da Informação<br>
+                         <span class="bolsa-disp__tipo">Bacharelado</span>
+                     </div>
+                   <div style="display:block;width:40%;text-align: right;" class="bolsa-disp__texto">Bolsa de 
+                       <span class="bolsa-disp__preco">75%<br>R$ 425/mês</span>
+                           </div>
+                </div>
+
+                 <div class="bolsa-disp__row">
+                   <div style="display:block;width:8%;text-align: left;">
+                        <i class="far fa-square filtro__checkbox  filtro__checkbox_unchecked" style="margin: auto;"></i>
+                   </div>
+                   <div style="display:block;width:22%;text-align: left;">
+                        <img class="bolsa-fav__logo-escola" style="text-align:center;width:95px;height:25px;margin: auto;" src="./img/anhembi-morumbi.png" alt="Anhembi-Morumbi"/>
+                   </div>
+                   <div style="display:block;width:25%;text-align: left;">Pedagogia<br>Licenciatura</div>
+                   <div style="display:block;width:45%;text-align: right;">Bolsa de 52%<br>R$ 294/mês</div>
+                </div>
+            </div>            
+
+        <div class="bolsas-disponiveis__botoes">
+            <button class="bolsa-disp__botao bolsa-disp__botao-cancelar">Cancelar</button>
+            <button class="bolsa-disp__botao bolsa-disp__botao-ad-bolsas">Adicionar bolsa(s)</button>
         </div>
   </div>
       </div>
-
-    </div>
 
 <script>
 // Get the modal
@@ -212,7 +267,7 @@ var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsByClassName("modal__close")[0];
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {

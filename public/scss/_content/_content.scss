@@ -9,8 +9,9 @@ and open the template in the editor.
 */
 @import "../_variables.scss";
 @import "_semestres.scss";
-@import "bolsas-favoritas/_bolsas-favoritas.scss";
-@import "bolsas-disponiveis/_bolsas-disponiveis.scss";
+@import "_bolsas-favoritas/_bolsas-favoritas.scss";
+@import "_bolsas-disponiveis/_bolsas-disponiveis.scss";
+@import "_modal/modal.scss";
 
 .content {
     padding-left: $site-margin;
