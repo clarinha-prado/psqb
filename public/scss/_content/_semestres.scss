@@ -1,53 +1,54 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Aug 11, 2019, 5:07:03 PM
-    Author     : Clarinha
+  Metodologia BEM - Bloco Elemento Modificador
+
+  Bloco: grupo de botões para seleção dos semestres
+  Prefixo: sems
+  Elementos: border, button (first / last) (selected / unselected)
+
+  Created on : Aug 11, 2019, 5:07:03 PM
+  Author     : Clarinha
 */
 
 @import "../_variables.scss";
 
-.semestres {
-    display: flex;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    width: 30%;
-    width: auto;
-    justify-content: flex-end;
+.sems {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 30%;
+  width: auto;
+  justify-content: flex-end;
 }
 
-.semestres__border {
-    display: flex;
-    align-items: stretch;
+.sems__border {
+  display: flex;
+  align-items: stretch;
 }
 
-.semestres__button {
-    border: 1px solid $azul-secundario;
-    padding: 5px 14px;
-    font-size: 12px;
-    font-weight: bold;
+.sems__button {
+  border: 1px solid $azul-secundario;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-.semestres__button_first {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.sems__button_first {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
-.semestres__button_last {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+.sems__button_last {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
-.semestres__button_selected {
-    background-color: $azul-secundario;
-    color: white;
+.sems__button_selected {
+  background-color: $azul-secundario;
+  color: white;
 }
 
-.semestres__button_unselected {
-    background-color: white;
-    color: $azul-secundario;
+.sems__button_unselected {
+  background-color: white;
+  color: $azul-secundario;
 }
 

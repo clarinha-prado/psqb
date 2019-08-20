@@ -1,0 +1,158 @@
+/*
+  Metodologia BEM - Bloco Elemento Modificador
+
+  Bloco: representa uma bolsa favorita na lista de bolsas favoritas
+  Prefixo: bfav
+  Elementos: container, logo, button (excluir / oferta) (enabled / disabled), 
+             escola, curso, avaliacao, estrelas, preco, oferta, dt-inicio,
+             separator, text (bold / oferta / title-indisp / aviso-indisp)
+
+  Created on : Aug 12, 2019, 5:47:52 PM
+  Author     : Clarinha
+*/
+@import "../../_variables.scss";
+
+.bfav-container {
+  width: 236px;
+  height: 380px;
+  display: block;
+  padding: 13px;
+  border: 1px solid;
+  border-color: gainsboro;
+  box-shadow: -2px 2px 2px 0 #eeefef;
+  margin-right: 15px;
+  margin-top: 15px; 
+  text-align: center;
+}
+
+.bfav-logo {
+  text-align:center;
+  width:120px;
+  height:33px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.bfav__escola {
+  font-size: 11px;
+  line-height: 5px;
+  color: $preto;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.bfav__curso {
+  font-size: 12px;
+  line-height: 15px;
+  color: $azul-secundario;
+  font-weight: bold;
+}
+
+.bfav__avaliacao {
+  font-size: 15px;
+  line-height: 12px;
+  color: $preto;
+  font-weight: bold;
+  margin-top: 20px;
+  vertical-align: middle;
+}
+
+.bfav__estrelas {
+  color: $amarelo-principal;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.bfav__preco {
+  font-size: 11px;
+  line-height: 6px;
+  color: $preto;
+  text-decoration: line-through;
+}
+
+.bfav__oferta {
+  font-size: 16px;
+  line-height: 8px;
+  color: $verde;
+  font-weight: bold;
+  margin-bottom: 17px;
+}
+
+.bfav__text-oferta {
+  font-size: 11px;
+  line-height: 11px;
+  color: $preto;
+}
+
+.bfav__button {
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 13px;
+  font-weight: bold;
+  height: 28px;
+}
+
+.bfav__button-excluir {
+  border-color: $azul-secundario;
+  background-color: white;
+  color: $azul-secundario;
+  width: 76px;
+  margin-right: 3px;
+}
+
+.bfav__button-oferta {
+  width: 110px;
+}
+
+.bfav__button-oferta_enabled {
+  border-color: $amarelo-secundario;
+  background-color: $amarelo-principal;
+  color: $preto;
+}
+
+.bfav__button-oferta_disabled {
+  border-color: $preto-suave;
+  background-color: gainsboro;
+  color: $preto-suave;
+}
+
+.bfav__dt-inicio{
+  font-size: 11px;
+  line-height: 11px;
+  color: $preto;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.bfav__text-title-indisp{
+  font-size: 11px;
+  line-height: 0px;
+  margin-bottom: 15px;
+  font-weight: 900;
+  color: $preto;
+}
+
+.bfav__text-aviso-indisp{
+  font-size: 11px;
+  line-height: 23px;
+  color: $preto;
+}
+
+.bfav__text-bold{
+  font-size: 11px;
+  line-height: 0px;
+  margin-bottom: 22px;
+  font-weight: 900;
+  color: $preto;
+}
+
+.b__separator {
+  display: block;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 22px;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: #eeefef;
+}

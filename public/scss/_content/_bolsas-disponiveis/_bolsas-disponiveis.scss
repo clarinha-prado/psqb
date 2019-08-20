@@ -1,16 +1,20 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Aug 12, 2019, 9:13:19 PM
-    Author     : Clarinha
+  Metodologia BEM - Bloco Elemento Modificador
+
+  Bloco: lista de bolsas disponíveis
+  Prefixo: list-bdisp
+  Elementos: container, row, text-header, button-container, select-container,
+             button (cancel / add)filter (definido em _filtro-bdisp), 
+             bdisp (definido em _bolsa-disponivel)
+
+  Created on : Aug 12, 2019, 9:13:19 PM
+  Author     : Clarinha
 */
 @import "../../_variables.scss";
-@import "_bolsa-disp.scss";
+@import "_bolsa-disponivel.scss";
+@import "_filtro-bolsas-disponiveis.scss";
 
-.bolsas-disponiveis {
+.list-bdisp__container {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -20,81 +24,59 @@ and open the template in the editor.
   width: 100%;
 }
 
-.bolsa-disp__row {
+.list-bdisp__row {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content:space-between;
+  justify-content:flex-start;
   align-items: center;
   width: 100%;
   border-bottom: gainsboro 3px solid;
   height: 74px;
 }
 
-select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        -o-appearance: none;
-        appearance: none; 
-        background-color: white;
-    display: block;
-    line-height: 1.42857143;
+.list-bdisp__text-header {
+  color: $preto;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 20px;
+  display:block;
 }
 
-select::-ms-expand {
-    display: none;
-}
-select + i.fa {
-        float: right;
-        margin-top: -31px;
-        margin-right: 10px;
-        /* this is so when you click on the chevron, your click actually goes on the dropdown menu */
-        pointer-events: none;
-        /* everything after this is just to cover up the original arrow */
-        /* (for browsers that don't support the syntax used above) */
-        background-color: transparent;
-        color:black!important;
-        padding-right: 5px;
-}
-   select option{
-       padding-right: 21px;
-   }
-
-.bolsa-disp__header-text {
-    color: $preto;
-    font-size: 13px;
-    font-weight: bold;
-    margin-top: 20px;
+.list-bdisp__header-column2 {
+  margin-left: auto;
+  width:92px;
 }
 
-.bolsas-disponiveis__botoes {
+.list-bdisp__button-container {
   display: flex;
   justify-content: flex-end;
   width: 100%;
   margin-top: 36px;
 }
 
-.bolsa-disp__botao {
-    border-radius: 5px;
-    border-width: 1px;
-    border-style: solid;
-    font-size: 13px;
-    font-weight: bold;
-    height: 41px;
-    margin: 0 10px;
+.list-bdisp__button {
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 13px;
+  font-weight: bold;
+  height: 41px;
+  margin: 0 10px;
 }
 
-.bolsa-disp__botao-cancelar {
-    border-color: $azul-secundario;
-    background-color: white;
-    color: $azul-secundario;
-    width: 98px;
-    margin-right: 3px;
+.list-bdisp__button-cancel {
+  border-color: $azul-secundario;
+  background-color: white;
+  color: $azul-secundario;
+  width: 98px;
+  margin-right: 3px;
 }
 
-.bolsa-disp__botao-ad-bolsas {
-    width: 155px;
-    border-color: $amarelo-secundario;
-    background-color: $amarelo-principal;
-    color: $preto;
+.list-bdisp__button-add {
+  width: 155px;
+  border-color: $amarelo-secundario;
+  background-color: $amarelo-principal;
+  color: $preto;
 }
+

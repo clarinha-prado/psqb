@@ -1,59 +1,41 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Aug 11, 2019, 3:55:54 PM
-    Author     : Clarinha
+  Metodologia BEM - Bloco Elemento Modificador
+
+  Bloco: conteúdo principal da página
+  Prefixo: cont
+  Elementos: text (title / regular), breadcrumb 
+
+  Created on : Aug 11, 2019, 3:55:54 PM
+  Author     : Clarinha
 */
 @import "../_variables.scss";
 @import "_semestres.scss";
 @import "_bolsas-favoritas/_bolsas-favoritas.scss";
 @import "_bolsas-disponiveis/_bolsas-disponiveis.scss";
 @import "_modal/modal.scss";
+@import "_breadcrumb.scss";
 
-.content {
-    padding-left: $site-margin;
-    padding-right: $site-margin;
+.cont {
+  padding-left: $site-margin;
+  padding-right: $site-margin;
 }
 
-.content__text {
-    color: $preto-suave;
+.cont__text {
+  color: $preto-suave;
 }
 
-.content__title {
-    font-size: 28px;
-    margin-top: 30px;
-    font-weight: bold;
+@media screen and (min-width: 450px) {
+  .cont__text_title {
+      font-size: 28px;
+  }
 }
 
-.content__text-regular {
-    font-size: 12px;
+.cont__text_title {
+  font-size: 20px;
+  margin-top: 30px;
+  font-weight: bold;
 }
 
-.breadcrumb {
-    padding-left: 8%;
-}
-
-.breadcrumb__text {
-    margin: 0px;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: .6rem;
-    line-height: .99rem;
-}
-
-.breadcrumb__parent {
-    color: $azul-principal;
-}
-
-.breadcrumb__current {
-    color: $preto-suave;
-}
-
-.breadcrumb__separator {
-    color: $preto-suave;
-    margin-left: 5px;
-    margin-right: 5px;
+.cont__text_regular {
+  font-size: 12px;
 }

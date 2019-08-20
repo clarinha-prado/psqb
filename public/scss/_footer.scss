@@ -1,46 +1,144 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Aug 12, 2019, 4:23:37 PM
-    Author     : Clarinha
+  Metodologia BEM - Bloco Elemento Modificador
+
+  Bloco: footer
+  Prefixo: foot
+  Elementos: container, section, text (regular / small / smaller), icon, 
+             1st-line, 2nd-line, heart
+
+  Created on : Aug 12, 2019, 4:23:37 PM
+  Author     : Clarinha
 */
 
 @import "_variables.scss";
 
-.footer {
-    display: flex;
-    margin-right: $site-margin;
-    margin-left: $site-margin;
+.foot__container {
+  display: flex;
+}
+
+.foot__2nd-line {
+  background-color: $azul-principal;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+@media screen and (min-width:450px) {
+  .foot__container {
+      flex-direction: row;
+  }
+
+  .foot__2nd-line {
+      height: 100px;
+  }
+}
+
+@media screen and (max-width:450px) {
+  .foot__container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .foot__section {
+    flex-direction: row;
+    justify-content: center;
+    width:50%
+  }
+}
+
+@media screen and (min-width: 962px) {
+  .foot__container {
+    padding-right: $site-margin;
+    padding-left: $site-margin;
+  }
+
+  .foot__1st-line {
+    margin-top: 250px;
+  }
+}
+
+@media screen and (max-width: 962px) {
+  .foot__1st-line {
     margin-top: 100px;
-    justify-content: space-between;
+  }
+
+  .foot__container {
+    padding-right: 2%;
+    padding-left: 2%;
+  }
+}
+    
+.foot__1st-line {
+  background-color: $azul-secundario;
+  justify-content: space-between;
+  height: 100px;
 }
 
-.footer__column {
-    align-items: center;
-    display: flex;
+.foot__section {
+  align-items: center;
+  display: flex;
 }
 
-.footer__text {
-    font-weight: 700;
-    color: $azul-secundario;
+@media screen and (max-width: 800px) and (min-width:450px) {
+  .foot__section {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
-.footer__text_regular {
-    font-size: 10px;
-    line-height: 10px;
+.foot__text {
+  font-weight: 700;
+  color: white;
+  margin: 0;
 }
 
-.footer__text_small {
-    font-size: 8px;
-    line-height: 8px;
+.foot__text_smaller {
+  font-size: 10px;
+  line-height: 15px;
 }
 
-.header__icon {
-    color: $azul-principal;
+@media screen and (max-width: 860px) {
+  .foot__text_small {
+    display: none;
+  }
+}
+
+.foot__text_small {
+  font-size: 11px;
+  line-height: 11px;
+}
+
+.foot__icon {
+  color: white;
+}
+    
+@media screen and (max-width: 600px) {
+  .foot__icon {
     font-size: 20px;
-    margin: 5px;
-    }
+    margin: 3px;
+  }
+    
+  .foot__text_regular {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+    
+@media screen and (min-width: 600px) {
+  .foot__icon {
+    font-size: 40px;
+    margin: 2px 12px;
+  }
 
+  .foot__text_regular {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+  
+.foot__heart {
+  margin:4px;
+  font-size: 12px;
+} 

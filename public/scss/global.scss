@@ -1,11 +1,8 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Aug 10, 2019, 12:41:04 PM
-    Author     : Clarinha
+  Estilos de elementos / blocos genéricos do site.
+
+  Created on : Aug 10, 2019, 12:41:04 PM
+  Author     : Clarinha
 */
 @import "_header.scss";
 @import "_menu.scss";
@@ -13,9 +10,9 @@ and open the template in the editor.
 @import "_footer.scss";
 
 .site-page {
-    max-width: 1200px;
-    margin: 0 auto;
-    font-family: Verdana,Helvetica,Arial,sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Verdana,Helvetica,Arial,sans-serif;
 }
 
 * {
@@ -23,7 +20,7 @@ and open the template in the editor.
 }
 
 .modal {
-    max-width: 1200px;
-    margin: 0 auto;
-    font-family: Verdana,Helvetica,Arial,sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Verdana,Helvetica,Arial,sans-serif;
 }

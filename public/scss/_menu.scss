@@ -1,43 +1,52 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Aug 11, 2019, 1:28:30 PM
-    Author     : Clarinha
+  Metodologia BEM - Bloco Elemento Modificador
+
+  Bloco: menu
+  Prefixo: menu
+  Elementos: item (regular / small) (selected / unselected)
+
+  Created on : Aug 11, 2019, 1:28:30 PM
+  Author     : Clarinha
 */
 @import "_variables.scss";
 
 .menu {
-    background-color: $azul-principal;
-    padding-left: $site-margin;
-    height: 30px;
-    margin-bottom: 8px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    align-items: strech;
+  background-color: $azul-principal;
+  padding-left: $site-margin;
+  height: 30px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: strech;
 }
 
 .menu__item {
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    padding-right: 16px;
-    display: flex;
-    align-items: center;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  padding-right: 16px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 450px) {
+  .menu__item_regular {
+    font-size: 14px;
+  }
+
+  .menu__item_small {
+    font-size: 12px;
+  }
 }
 
 .menu__item_regular {
-    font-size: 14px;
+  font-size: 12px;
 }
 
 .menu__item_small {
-    padding-left: 16px;
-    font-size: 12px;
+  padding-left: 16px;
+  font-size: 11px;
 }
 
 .menu__item_selected {
-    background-color: $azul-secundario;
+  background-color: $azul-secundario;
 }

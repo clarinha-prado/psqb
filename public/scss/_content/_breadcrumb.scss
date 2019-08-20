@@ -1,0 +1,36 @@
+/*
+  Metodologia BEM - Bloco Elemento Modificador
+
+  Bloco: breadcrumb
+  Prefixo: bred
+  Elementos: text (parent / current), separator
+
+  Created on : Aug 11, 2019, 3:55:54 PM
+  Author     : Clarinha
+*/
+
+.bred {
+  padding-left: $site-margin;
+}
+
+.bred__text {
+  margin: 0px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: .6rem;
+  line-height: .99rem;
+}
+
+.bred__text_parent {
+  color: $azul-secundario;
+}
+
+.bred__text_current {
+  color: $preto-suave;
+}
+
+.bred__separator {
+  color: $preto-suave;
+  margin-left: 5px;
+  margin-right: 5px;
+}

@@ -1,14 +1,14 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Aug 13, 2019, 9:51:48 AM
-    Author     : Clarinha
+  Metodologia BEM - Bloco Elemento Modificador
+
+  Bloco: janela modal
+  Prefixo: modal
+  Elementos: content, header, close, text, title
+
+  Created on : Aug 10, 2019, 1:15:22 AM
+  Author     : Clarinha
 */
 @import "../../_variables.scss";
-@import "filtro-bolsas.scss";
 
 /* The Modal (background) */
 .modal {
@@ -25,37 +25,44 @@ and open the template in the editor.
 }
 
 /* Modal Content */
-.modal-content {
+.modal__content {
   position: relative;
   background-color: #fefefe;
   padding: 3%;
   border: 1px solid #888;
-  width: 60%;
+  width: 90%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
   display: flex;
-  margin-left: 20% ;
-  margin-right: 20% ;
+  margin-left: 5% ;
+  margin-right: 5% ;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.modal-header {
-  padding: 2px 2px;
-  height: 70px;
+.modal__header {
+  height: 37px;
   background-color: transparent;
   color: white;
   position: relative;
   margin: auto;
   padding: 0;
-  width: 75%;
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
+  width: 90%;
   animation-name: animatetop;
   animation-duration: 0.4s
+}
+
+@media screen and (min-width:1044px) {
+  .modal__content {
+    width: 60%;
+    margin-left: 20% ;
+    margin-right: 20% ;
+  }
+  
+  .modal__header {
+    width: 60%;
+  }
 }
 
 /* Add Animation */
@@ -75,6 +82,7 @@ and open the template in the editor.
   float: right;
   font-size: 35px;
   font-weight: bold;
+  margin: auto;
 }
 
 .modal__close:hover,
@@ -85,14 +93,14 @@ and open the template in the editor.
 }
 
 .modal__text {
-    color: $preto;
-    font-size: 12px;
-    display: block;
+  color: $preto;
+  font-size: 12px;
+  display: block;
 }
-
+    
 .modal__title {
-    font-size: 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-weight: bold;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
 }

@@ -1,61 +1,143 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Aug 10, 2019, 1:15:22 AM
-    Author     : Clarinha
+  Metodologia BEM - Bloco Elemento Modificador
+
+  Bloco: header
+  Prefixo: head
+  Elementos: container, section, text (regular / small), icon, text-container,
+             logo
+
+  Created on : Aug 10, 2019, 1:15:22 AM
+  Author     : Clarinha
 */
 @import "_variables.scss";
 
-.header {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 8%;
-    margin-bottom: 5px;
-    margin-top: 5px;
+.head__container {
+  display: flex;
+  padding-left: $site-margin;
+  padding-right: $site-margin;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  flex-flow: row nowrap;
 }
 
-.header__column {
-    webkit-box-align: center;
-    webkit-align-items: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
+@media screen and (max-width: 450px) {
+  .head__text_regular {
+    display: none;
+  }
+
+  .head__icon {
+    font-size: 25px;
+    margin: 0 10px;
+  }
+    
+  .head__logo {
+    margin-right: 100px;
+    margin-left: 60px;
+  }
 }
 
-.header__text {
-    margin: 5px;
-    font-weight: 700;
-    text-decoration: none;
-    color: $azul-principal;
+.head__section {
+  align-items: center;
+  display: flex;
 }
 
-.header__text_regular {
-    font-size: .8rem;
-    line-height: .85rem;
+.head__text {
+  margin: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  color: $azul-secundario;
 }
 
-.header__text_small {
-    font-size: .6rem;
-    line-height: .99rem;
-}
-
-.header__icon {
-    color: $azul-principal;
+@media screen and (max-width: 600px) and (min-width:450px) {
+  .head__icon {
+    color: $azul-secundario;
     font-size: 20px;
-    margin: 5px;
-    }
-
-.header__logo {
-    display: block;
-    margin-right: 8px;
-    width: 92px;
-    margin:auto;
+    margin: 0;
+  }
 }
 
+@media screen and (max-width: 600px) {
+  .head__text_regular {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .head__logo {
+    display: block;
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .head__text_regular {
+    font-size: 13px;
+    line-height: 19px;
+  }
+
+  .head__logo {
+    display: block;
+    width: 125px;
+  }
+
+  .head__icon {
+    color: $azul-secundario;
+    font-size: 22px;
+     margin: 5px;
+      }
+}
+
+@media screen and (max-width: 800px) and(min-width: 450px) {
+  .head__container {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .head__section {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .head__text_small {
+    display: none;
+  }
+    
+  .head__section4 {
+    flex-direction: column-reverse;
+  }
+}
+
+.head__section4 {
+  text-align: right;
+}
+
+.head__text_small {
+  font-size:10px;
+}
+
+@media screen and (min-width: 800px) {
+  .head__container {
+    justify-content: flex-start;
+  }
+
+  .head__section1 {
+    width:17%;
+    border-right:#eeefef solid 3px;
+  }
+
+  .head__section2 {
+    width:35%;
+    padding-left: 2%;
+    align-items: center;
+  }
+
+  .head__section4 {
+    margin-left: auto;
+  }
+}
+
+.head__text-container {
+  display: block;
+}

@@ -11,6 +11,11 @@
     <link rel="stylesheet" type="text/css" href="./css/global.css"/> 
 
     <script src="https://kit.fontawesome.com/f5f57af4b4.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script src="../Sources/semestres.js"
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -21,33 +26,27 @@
   <body class="site-page">
     <noscript>Você precisa habilitar JavaScript para visualizar esta página.</noscript>
     
-    <header class="header">
-        <div style="flex-grow:1;border-right:#eeefef solid 3px;padding-right: 10px;" class="header__column">
-                <i class="fas fa-info-circle header__icon"></i>
-                <p class="header__text header__text_regular">Como funciona</p>
-        </div>
+    <header class="head__container">
+        <section class="head__section head__section1">
+                <i class="fas fa-info-circle head__icon"></i>
+                <p class="head__text head__text_regular">Como funciona</p>
+        </section>
             
-        <div style="flex-grow:1;padding-left: 10px;" class="header__column">
-            <i style="color: #25D366" class="fab fa-whatsapp header__icon"></i>
-            <div style="display:block;">
-                <p style="margin:auto" class="header__text header__text_regular">0800 123 2222</p>
-                <p style="margin:auto" class="header__text header__text_small">Envie mensagem ou ligue</p></div>
-        </div>
+        <section class="head__section head__section2">
+            <i class="fab fa-whatsapp head__icon"></i>
+            <div class="head__text-container">
+                <p class="head__text head__text_regular">0800 123 2222</p>
+                <p class="head__text head__text_small">Envie mensagem ou ligue</p></div>
+        </section>
             
-        <div style="flex-grow:9;flex-direction: column" class="header__column">
-            <img class="header__logo" src="./img/logo.svg" alt="Quero Bolsa" />
-        </div>
+        <section class="head__section">
+            <img class="head__logo" src="./img/logo.svg" alt="Quero Bolsa" />
+        </section>
             
-        <div style="flex-grow: 2" class="header__column">
-        </div>
-            
-        <div style="flex-grow: 1" class="header__column">
-            <p class="header__text header__text_regular">Nome Sobrenome</p>
-            <i class="far fa-user-circle header__icon"></i>
-        </div>
-        <div style="flex-grow: 1" class="header__column">
-        </div>
-            
+        <section class="head__section head__section4">
+            <p class="head__text head__text_regular">Nome Sobrenome</p>
+            <i class="far fa-user-circle head__icon"></i>
+        </section>
     </header>
     
     <nav class="menu">
@@ -56,147 +55,187 @@
         <a class="menu__item menu__item_small menu__item_selected" href="#">Bolsas favoritas</a>
     </nav>
     
-    <nav class="breadcrumb">
-        <a class="breadcrumb__parent breadcrumb__text" href="#">Home</a>
-        <a class="breadcrumb__separator breadcrumb__text" href="#">/</a> 
-        <a class="breadcrumb__parent breadcrumb__text" href="#">Minha conta</a>
-        <a class="breadcrumb__separator breadcrumb__text" href="#">/</a> 
-        <a class="breadcrumb__current breadcrumb__text" href="#">Bolsas favoritas</a>
+    <nav class="bred">
+        <a class="bred__text_parent bred__text" href="#">Home</a>
+        <a class="bred__separator bred__text" href="#">/</a> 
+        <a class="bred__text_parent bred__text" href="#">Minha conta</a>
+        <a class="bred__separator bred__text" href="#">/</a> 
+        <a class="bred__text_current bred__text" href="#">Bolsas favoritas</a>
     </nav>
     
-    <main class="content">
-        <p class="content__text content__title">Bolsas favoritas</p>
-        <p class="content__text content__text-regular">Adicione bolsas de cursos e faculdades do seu interesse e receba atualizações com as melhores ofertas disponíveis</p>
+    <main class="cont">
+        <p class="cont__text cont__text_title">Bolsas favoritas</p>
+        <p class="cont__text cont__text_regular">Adicione bolsas de cursos e faculdades do seu interesse e receba atualizações com as melhores ofertas disponíveis</p>
         
-        <div class="semestres"><div class="semestres__border">
-            <button class="semestres__button semestres__button_selected semestres__button_first">Todos os semestres</button>
-            <button class="semestres__button semestres__button_unselected">2º semestre de 2019</button>
-            <button class="semestres__button semestres__button_unselected semestres__button_last">1º semestre de 2020</button>
-            </div></div>
+        <section class="sems">
+            <div class="sems__border">
+                <button class="sems__button sems__button_selected sems__button_first">Todos os semestres</button>
+                <button class="sems__button sems__button_unselected">2º semestre de 2019</button>
+                <button class="sems__button sems__button_unselected sems__button_last">1º semestre de 2020</button>
+            </div>
+        </section>
         
-        <section class="bolsas-favoritas">
-            <article class="bolsa-fav">
-                <i id="myBtn" class="fas fa-plus-circle bolsa-add__icon"></i>
-                <p class="bolsa-add__title">Adicionar curso</p>
-                <p class="bolsa-add__text">Clique para adicionar bolsas de cursos do seu interesse</p>
+        <section class="list-bfav">
+            <section class="list-bfav__add-container">
+                <i id="modal__button-open" class="fas fa-plus-circle list-bfav__add-icon"></i>
+                <p class="list-bfav__add-title">Adicionar curso</p>
+                <p class="list-bfav__add-text">Clique para adicionar bolsas de cursos do seu interesse</p>
+            </section>
+
+            <article class="bfav-container">
+                <img class="bfav-logo"src="./img/estacio.png" alt="Anhanguera"/>
+                <p class="bfav__escola">ANHANGUERA</p>
+                <p class="bfav__curso">Arquitetura e Urbanismo</p>
+                <p class="bfav__avaliacao">3.8
+                    <i class="fas fa-star bfav__estrelas"></i>
+                    <i class="fas fa-star bfav__estrelas"></i>
+                    <i class="fas fa-star bfav__estrelas"></i>
+                    <i class="fas fa-star-half-alt bfav__estrelas"></i>
+                    <i class="far fa-star bfav__estrelas"></i>
+                </p>
+                <hr class="b__separator" />
+                <p class="bfav__escola">PRESENCIAL &middot; NOITE</p>
+                <p class="bfav__dt-inicio">Início das aulas em: 01/07/2019</p>
+                <hr class="b__separator">
+                <p class="bfav__text-title-indisp">Bolsa indisponível.</p>
+                <p class="bfav__text-aviso-indisp">Entre em contato com nosso<br>atendimento para saber mais.</p>
+                <button class="bfav__button bfav__button-excluir">Excluir</button>
+                <button class="bfav__button bfav__button-oferta bfav__button-oferta_disabled">Indisponível</button>
             </article>
 
-            <article class="bolsa-fav">
-                <img class="bolsa-fav__logo-escola" style="text-align:center;width:120px;height:33px;" src="./img/anhanguera.png" alt="Anhanguera"/>
-                <p class="bolsa-fav__escola">ANHANGUERA</p>
-                <p class="bolsa-fav__curso">Arquitetura e Urbanismo</p>
-                <p class="bolsa-fav__avaliacao">3.8
-                    <i class="fas fa-star bolsa-fav__estrelas"></i>
-                    <i class="fas fa-star bolsa-fav__estrelas"></i>
-                    <i class="fas fa-star bolsa-fav__estrelas"></i>
-                    <i class="fas fa-star-half-alt bolsa-fav__estrelas"></i>
-                    <i class="far fa-star bolsa-fav__estrelas"></i>
+            <article class="bfav-container">
+                <img class="bfav-logo"src="./img/anhanguera.png" alt="Anhanguera"/>
+                <p class="bfav__escola">ANHANGUERA</p>
+                <p class="bfav__curso">Arquitetura e Urbanismo</p>
+                <p class="bfav__avaliacao">3.8
+                    <i class="fas fa-star bfav__estrelas"></i>
+                    <i class="fas fa-star bfav__estrelas"></i>
+                    <i class="fas fa-star bfav__estrelas"></i>
+                    <i class="fas fa-star-half-alt bfav__estrelas"></i>
+                    <i class="far fa-star bfav__estrelas"></i>
                 </p>
-                <hr class="bolsafav__separator" />
-                <p class="bolsa-fav__escola">PRESENCIAL &middot; NOITE</p>
-                <p class="bolsa-fav__inicio">Início das aulas em: 01/07/2019</p>
-                <hr class="bolsafav__separator">
-                <p class="bolsa-fav__titulo-indisp">Bolsa indisponível.</p>
-                <p class="bolsa-fav__aviso-indisp">Entre em contato com nosso<br>atendimento para saber mais.</p>
-                <button class="bolsa-fav__botao bolsa-fav__botao-excluir">Excluir</button>
-                <button class="bolsa-fav__botao bolsa-fav__botao-oferta bolsa-fav__botao-oferta_unselected">Indisponível</button>
+                <hr class="b__separator" />
+                <p class="bfav__escola">PRESENCIAL &middot; NOITE</p>
+                <p class="bfav__dt-inicio">Início das aulas em: 01/07/2019</p>
+                <hr class="b__separator">
+                <p class="bfav__text-title-indisp">Bolsa indisponível.</p>
+                <p class="bfav__text-aviso-indisp">Entre em contato com nosso<br>atendimento para saber mais.</p>
+                <button class="bfav__button bfav__button-excluir">Excluir</button>
+                <button class="bfav__button bfav__button-oferta bfav__button-oferta_disabled">Indisponível</button>
             </article>
 
-            <article class="bolsa-fav">
-                <img class="bolsa-fav__logo-escola" style="text-align:center;" src="./img/anhanguera.png" alt="Anhanguera"/>
-                <p class="bolsa-fav__escola">ANHANGUERA</p>
-                <p class="bolsa-fav__curso">Arquitetura e Urbanismo</p>
-                <p class="bolsa-fav__avaliacao">3.8
-                    <i class="fas fa-star bolsa-fav__estrelas"></i>
-                    <i class="fas fa-star bolsa-fav__estrelas"></i>
-                    <i class="fas fa-star bolsa-fav__estrelas"></i>
-                    <i class="fas fa-star-half-alt bolsa-fav__estrelas"></i>
-                    <i class="far fa-star bolsa-fav__estrelas"></i>
+            <article class="bfav-container">
+                <img class="bfav-logo"src="./img/anhanguera.png" alt="Anhanguera"/>
+                <p class="bfav__escola">ANHANGUERA</p>
+                <p class="bfav__curso">Arquitetura e Urbanismo</p>
+                <p class="bfav__avaliacao">3.8
+                    <i class="fas fa-star bfav__estrelas"></i>
+                    <i class="fas fa-star bfav__estrelas"></i>
+                    <i class="fas fa-star bfav__estrelas"></i>
+                    <i class="fas fa-star-half-alt bfav__estrelas"></i>
+                    <i class="far fa-star bfav__estrelas"></i>
                 </p>
-                <hr class="bolsafav__separator" />
-                <p class="bolsa-fav__escola">PRESENCIAL &middot; NOITE</p>
-                <p class="bolsa-fav__inicio">Início das aulas em: 01/07/2019</p>
-                <hr class="bolsafav__separator">
-                <p class="bolsa-fav__text-bold">Mensalidade com o Quero Bolsa:</p>
-                <p class="bolsa-fav__preco">R$1.482,31</p>
-                <p class="bolsa-fav__oferta">R$453,63 <span class="bolsa-fav__oferta-period">/ mês</span></p>
-                <button class="bolsa-fav__botao bolsa-fav__botao-excluir">Excluir</button>
-                <button class="bolsa-fav__botao bolsa-fav__botao-oferta bolsa-fav__botao-oferta_selected">Ver oferta</button>
+                <hr class="b__separator" />
+                <p class="bfav__escola">PRESENCIAL &middot; NOITE</p>
+                <p class="bfav__dt-inicio">Início das aulas em: 01/07/2019</p>
+                <hr class="b__separator">
+                <p class="bfav__text-bold">Mensalidade com o Quero Bolsa:</p>
+                <p class="bfav__preco">R$1.482,31</p>
+                <p class="bfav__oferta">R$453,63 <span class="bfav__text-oferta">/ mês</span></p>
+                <button class="bfav__button bfav__button-excluir">Excluir</button>
+                <button class="bfav__button bfav__button-oferta bfav__button-oferta_enabled">Ver oferta</button>
             </article>
         </section>
     </main>
     
-    <footer>
-        <div  class="footer" style="background-color:lightblue">
-            <div class="footer__column">
-                <i class="fab fa-whatsapp header__icon"></i>
-                <p class="footer__text footer__text_regular">0800 123 2222</p>
-                <p class="footer__text footer__text_small">Seg - Sex 8h-22h</p>
-            </div>
-            <div class="footer__column">
-                <i class="far fa-comments header__icon"></i>
-                <p class="footer__text footer__text_regular">Chat ao vivo</p>
-                <p class="footer__text footer__text_small">Seg - Sex 8h-22h</p>
-            </div>
-            <div class="footer__column">
-                <i class="far fa-envelope header__icon"></i>
-                <p class="footer__text footer__text_regular">Mande um e-mail</p>
-                <p class="footer__text footer__text_small">Respondemos rapidinho</p>
-            </div>
-            <div class="footer__column">
-                <i class="far fa-user-circle header__icon"></i>
-                <p class="footer__text footer__text_regular">Central de ajuda</p>
-                <p class="footer__text footer__text_small">Encontre todas as respostas</p>
-            </div>
-        </div>
-        <div>
-            <p>Feito com <i class="far fa-heart"></i></i> pela Quero Educação</p>
-        </div>
+    <footer class="foot__container foot__1st-line">
+        <section class="foot__section">
+            <i class="fab fa-whatsapp foot__icon"></i>
+            <p class="foot__text foot__text_regular">
+                0800 123 2222
+                <br>
+                <span class="foot__text foot__text_small">
+                    Seg - Sex 8h-22h
+                </span>
+            </p>
+        </section>
+        <section class="foot__section">
+            <i class="far fa-comments foot__icon"></i>
+            <p class="foot__text foot__text_regular">
+                Chat ao vivo
+                <br>
+                <span class="foot__text foot__text_small">
+                    Seg - Sex 8h-22h</p>
+                </span>
+        </section>
+        <section class="foot__section">
+            <i class="far fa-envelope foot__icon"></i>
+            <p class="foot__text foot__text_regular">
+                Mande um e-mail
+                <br>
+                <span class="foot__text foot__text_small">
+                    Respondemos rapidinho
+                </span>
+            </p>
+        </section>
+        <section class="foot__section">
+            <i class="fas fa-info-circle foot__icon"></i>
+            <p class="foot__text foot__text_regular">
+                Central de ajuda
+                <br>
+                <span class="foot__text foot__text_small">
+                    Encontre todas as respostas
+                </span>
+            </p>
+        </section>
+    </footer>
+    <footer class="foot__container foot__2nd-line foot__text  foot__text_smaller">
+            Feito com <i class="far fa-heart foot__heart"></i> pela Quero Educação
     </footer>
     
     <!-- -------------------------------------------------- The Modal ---------------------------------------------------------- -->
-    <div id="myModal" class="modal">
+    <main id="modal" class="modal">
 
       <!-- Modal content -->
-      <div class="modal-header">
+      <header class="modal__header">
         <p class="modal__close">&times;</p>
-      </div>
-      <div class="modal-content">
+      </header>
+      <section class="modal__content">
           <div class="modal__title">Adicionar bolsa</div>
           <div class="modal__text">Filtre e adicione as bolsas de seu interesse.</div>
-        <div class="filtro-bolsas">
-            <div class="filtro__field-container">
-                <label class="filtro__field-caption" for="fname">SELECIONE SUA CIDADE</label><br>
-                <input type="text" class="filtro__input filtro__field-content" id="fname" name="cidade" value="São José dos Campos">
+        <section class="fdisp__container">
+            <div class="fdisp__field-container">
+                <label class="fdisp__field-caption" for="fname">SELECIONE SUA CIDADE</label><br>
+                <input type="text" class="fdisp__input fdisp__field-content" id="fname" name="cidade" value="São José dos Campos">
             </div>
             
-            <div class="filtro__field-container">
-                <label class="filtro__field-caption" for="fname">SELECIONE O CURSO DE SUA PREFERÊNCIA</label><br>
-                <select class="filtro__select  filtro__field-content" name="curso">
+            <div class="fdisp__field-container">
+              <label class="fdisp__field-caption" for="fname">SELECIONE O CURSO <span class="fdisp__text-extra">DE SUA PREFERÊNCIA</span></label><br>
+                <select class="fdisp__select  fdisp__field-content" name="curso">
                     <option value="au">Australia</option>
                     <option value="ca">Canada</option>
                     <option value="usa">USA</option>
                 </select>
-                <i class="fa fa-chevron-down" style="color:black"></i>
+                <i class="fa fa-chevron-down"></i>
             </div>
             
-            <div class="filtro__field-container">
-                <label class="filtro__field-caption" for="fname">COMO VOCÊ QUER ESTUDAR?</label><br>
-                    <i class="fas fa-check-square filtro__checkbox filtro__checkbox_checked"></i>
-                    <span class="filtro__checkbox-text">Presencial</span>
-                    <i class="far fa-square filtro__checkbox filtro__checkbox_unchecked"></i>
-                    <span class="filtro__checkbox-text">A distância</span>
+            <div class="fdisp__field-container">
+                <label class="fdisp__field-caption" for="fname">COMO VOCÊ QUER ESTUDAR?</label><br>
+                    <i class="fas fa-check-square fdisp__checkbox fdisp__checkbox_checked"></i>
+                    <span class="fdisp__checkbox-text">Presencial</span>
+                    <i class="far fa-square fdisp__checkbox fdisp__checkbox_unchecked"></i>
+                    <span class="fdisp__checkbox-text">A distância</span>
             </div>
             
-            <div class="filtro__field-container">
-                <label class="filtro__field-caption" for="fname">ATÉ QUANTO PODE PAGAR?</label><br>
-                  <span style="line-height: 27px;font-size: 12px;;">R$<span class="filtro__caption" id="demo"></span></span>
-                  <input type="range" min="100" max="10000" value="10000" class="filtro__slider" id="mensalidade">
+            <div class="fdisp__field-container">
+                <label class="fdisp__field-caption" for="fname">ATÉ QUANTO PODE PAGAR?</label><br>
+                  <span class="fdisp__moeda">R$<span class="filtro__caption" id="valor"></span></span>
+                  <input type="range" min="100" max="10000" value="10000" class="fdisp__slider" id="mensalidade">
 
                 <script>
                 //() => {separador-milhar(y.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
                 var slider = document.getElementById("mensalidade");
-                var sliderValue = document.getElementById("demo");
+                var sliderValue = document.getElementById("valor");
                 var valorFormatado = slider.value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
                 sliderValue.innerHTML = valorFormatado;
 
@@ -206,80 +245,51 @@
                 }
                 </script>              
             </div>
-              
-              
-            <div class="bolsas-disponiveis">
-                 <div class="bolsa-disp__row">
-                   <div style="display:block;" class="bolsa-disp__header-text">Resultado:</div>
-                   <div style="display:block;margin-left: auto;width:92px;" class="bolsa-disp__header-text">Ordenar por</div>
+        </section>
+        <section class="list-bdisp__container">
+                 <article class="list-bdisp__row">
+                   <div class="list-bdisp__text-header">Resultado:</div>
+                   <div class="list-bdisp__text-header list-bdisp__header-column2">Ordenar por</div>
                    
-                   <div style="display: inline;width:160px;text-align: right;color:blue;" class="bolsa-disp__header-text"> 
-                        <select class="bolsa-disp__escola-select bolsa-disp__header-text" style="color:blue;" name="curso">
-                            <option value="au" class="bolsa-disp__header-text">
-                                Nome da Faculdade
-                            </option>
-                             <option value="ca" class="bolsa-disp__header-text">Preço</option>
-                             <option value="usa" class="bolsa-disp__header-text">Curso</option>
+                   <div class="bdisp__select-container"> 
+                        <select class="bdisp__select-escola bdisp__select-text" name="curso">
+                            <option value="au" class="bdisp__select-text">Nome da Faculdade</option>
+                             <option value="ca" class="bdisp__select-text">Preço</option>
+                             <option value="usa" class="bdisp__select-text">Curso</option>
                          </select>
-                         <i class="fa fa-chevron-down" style="color:black"></i>
+                         <i class="fa fa-chevron-down"></i>
                    </div>
-                </div>
+                </article>
 
-                 <div class="bolsa-disp__row">
-                   <div style="display:block;width:7%;text-align: left;">
-                        <i class="fas fa-check-square filtro__checkbox filtro__checkbox_checked" style="margin: auto;"></i>
+                 <article class="list-bdisp__row">
+                   <div>
+                        <i class="fas fa-check-square bdisp__checkbox bdisp__checkbox_checked"></i>
                    </div>
-                   <div style="display:block;width:22%;text-align: left;">
-                        <img class="bolsa-fav__logo-escola" style="text-align:center;width:95px;height:25px;margin: auto;" src="./img/anhanguera.png" alt="Anhanguera"/>
+                   <div class="bdisp__logo-container">
+                        <img class="bdisp__logo" src="./img/anhanguera.png" alt="Anhanguera"/>
                    </div>
-                     <div style="display:block;width:31%;text-align: left;" class="bolsa-disp__curso">Sistemas da Informação<br>
-                         <span class="bolsa-disp__tipo">Bacharelado</span>
+                     <div class="bdisp__curso-container">Sistemas da Informação<br>
+                         <span class="bdisp__tipo-curso">Bacharelado</span>
                      </div>
-                   <div style="display:block;width:40%;text-align: right;" class="bolsa-disp__texto">Bolsa de 
-                       <span class="bolsa-disp__preco">75%<br>R$ 425/mês</span>
+                   <div class="bdisp__preco-container">Bolsa de 
+                       <span class="bdisp__preco">75%<br>R$ 425/mês</span>
                            </div>
-                </div>
+                </article>
+            </section>            
 
-                 <div class="bolsa-disp__row">
-                   <div style="display:block;width:7%;text-align: left;">
-                        <i class="fas fa-check-square filtro__checkbox filtro__checkbox_checked" style="margin: auto;"></i>
-                   </div>
-                   <div style="display:block;width:22%;text-align: left;">
-                        <img class="bolsa-fav__logo-escola" style="text-align:center;width:95px;height:25px;margin: auto;" src="./img/estacio.png" alt="Anhanguera"/>
-                   </div>
-                     <div style="display:block;width:31%;text-align: left;" class="bolsa-disp__curso">Sistemas da Informação<br>
-                         <span class="bolsa-disp__tipo">Bacharelado</span>
-                     </div>
-                   <div style="display:block;width:40%;text-align: right;" class="bolsa-disp__texto">Bolsa de 
-                       <span class="bolsa-disp__preco">75%<br>R$ 425/mês</span>
-                           </div>
-                </div>
-
-                 <div class="bolsa-disp__row">
-                   <div style="display:block;width:8%;text-align: left;">
-                        <i class="far fa-square filtro__checkbox  filtro__checkbox_unchecked" style="margin: auto;"></i>
-                   </div>
-                   <div style="display:block;width:22%;text-align: left;">
-                        <img class="bolsa-fav__logo-escola" style="text-align:center;width:95px;height:25px;margin: auto;" src="./img/unicsul.png" alt="Anhembi-Morumbi"/>
-                   </div>
-                   <div style="display:block;width:25%;text-align: left;">Pedagogia<br>Licenciatura</div>
-                   <div style="display:block;width:45%;text-align: right;">Bolsa de 52%<br>R$ 294/mês</div>
-                </div>
-            </div>            
-
-        <div class="bolsas-disponiveis__botoes">
-            <button class="bolsa-disp__botao bolsa-disp__botao-cancelar">Cancelar</button>
-            <button class="bolsa-disp__botao bolsa-disp__botao-ad-bolsas">Adicionar bolsa(s)</button>
-        </div>
-  </div>
-      </div>
+        <section class="list-bdisp__button-container">
+            <button class="list-bdisp__button list-bdisp__button-cancel">Cancelar</button>
+            <button class="list-bdisp__button list-bdisp__button-add">Adicionar bolsa(s)</button>
+        </section>
+    </section>
+      </main>
 
 <script>
 // Get the modal
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("modal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var btn = document.getElementById("modal__button-open");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("modal__close")[0];
@@ -288,19 +298,19 @@ var span = document.getElementsByClassName("modal__close")[0];
 btn.onclick = function() {
   modal.style.display = "block";
   margin: auto;
-}
+};
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
-}
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
 </script>
 </body>
 </html>
