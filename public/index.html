@@ -11,10 +11,6 @@
     <link rel="stylesheet" type="text/css" href="./css/global.css"/> 
 
     <script src="https://kit.fontawesome.com/f5f57af4b4.js"></script>
-    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
-    <script src="../Sources/semestres.js"
 
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -67,41 +63,9 @@
         <p class="cont__text cont__text_title">Bolsas favoritas</p>
         <p class="cont__text cont__text_regular">Adicione bolsas de cursos e faculdades do seu interesse e receba atualizações com as melhores ofertas disponíveis</p>
         
-        <section class="sems">
-            <div class="sems__border">
-                <button class="sems__button sems__button_selected sems__button_first">Todos os semestres</button>
-                <button class="sems__button sems__button_unselected">2º semestre de 2019</button>
-                <button class="sems__button sems__button_unselected sems__button_last">1º semestre de 2020</button>
-            </div>
-        </section>
+        <section id="Semestres"></section>
         
-        <section class="list-bfav">
-            <section class="list-bfav__add-container">
-                <i id="modal__button-open" class="fas fa-plus-circle list-bfav__add-icon"></i>
-                <p class="list-bfav__add-title">Adicionar curso</p>
-                <p class="list-bfav__add-text">Clique para adicionar bolsas de cursos do seu interesse</p>
-            </section>
-
-            <article class="bfav-container">
-                <img class="bfav-logo"src="./img/estacio.png" alt="Anhanguera"/>
-                <p class="bfav__escola">ANHANGUERA</p>
-                <p class="bfav__curso">Arquitetura e Urbanismo</p>
-                <p class="bfav__avaliacao">3.8
-                    <i class="fas fa-star bfav__estrelas"></i>
-                    <i class="fas fa-star bfav__estrelas"></i>
-                    <i class="fas fa-star bfav__estrelas"></i>
-                    <i class="fas fa-star-half-alt bfav__estrelas"></i>
-                    <i class="far fa-star bfav__estrelas"></i>
-                </p>
-                <hr class="b__separator" />
-                <p class="bfav__escola">PRESENCIAL &middot; NOITE</p>
-                <p class="bfav__dt-inicio">Início das aulas em: 01/07/2019</p>
-                <hr class="b__separator">
-                <p class="bfav__text-title-indisp">Bolsa indisponível.</p>
-                <p class="bfav__text-aviso-indisp">Entre em contato com nosso<br>atendimento para saber mais.</p>
-                <button class="bfav__button bfav__button-excluir">Excluir</button>
-                <button class="bfav__button bfav__button-oferta bfav__button-oferta_disabled">Indisponível</button>
-            </article>
+        <section class="list-bfav" id='BolsasFavoritas'></section>
 
             <article class="bfav-container">
                 <img class="bfav-logo"src="./img/anhanguera.png" alt="Anhanguera"/>
@@ -312,5 +276,11 @@ window.onclick = function(event) {
   }
 };
 </script>
-</body>
+
+      <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<!--    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script> -->
+    <script type="text/jsx" src="../src/Semestres.js"></script>
+
+  </body>
 </html>
