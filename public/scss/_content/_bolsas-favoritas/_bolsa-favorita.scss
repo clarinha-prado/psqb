@@ -4,7 +4,7 @@
   Bloco: representa uma bolsa favorita na lista de bolsas favoritas
   Prefixo: bfav
   Elementos: container, logo, button (excluir / oferta) (enabled / disabled), 
-             escola, curso, avaliacao, estrelas, preco, oferta, dt-inicio,
+             escola, curso, avaliacao, estrela, preco, oferta, dt-inicio, 
              separator, text (bold / oferta / title-indisp / aviso-indisp)
 
   Created on : Aug 12, 2019, 5:47:52 PM
@@ -49,18 +49,19 @@
 }
 
 .bfav__avaliacao {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 12px;
   color: $preto;
   font-weight: bold;
   margin-top: 20px;
+  margin-right: 6px;
   vertical-align: middle;
 }
 
-.bfav__estrelas {
+.bfav__estrela {
   color: $amarelo-principal;
   font-size: 12px;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 .bfav__preco {

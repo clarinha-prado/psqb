@@ -1,25 +1,36 @@
 import React from 'react';
-import './App.css';
+import Semestres from './Semestres';
+import ListaDeFavoritas from './ListaDeFavoritas';
+import Modal from './Modal';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="" className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = ({semestre: "todos"});
+
+    this.handleClickSemestre = this.handleClickSemestre.bind(this);
+  }
+
+  handleClickSemestre(event) {
+    this.setState({'semestre': event.target.name});
+  }
+
+    handleClickAdicionarBolsa(event) {
+    document.getElementById('modal').setAttribute("style", "display: block;");
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <p className="cont__text cont__text_title">Bolsas favoritas</p>
+        <p className="cont__text cont__text_regular">Adicione bolsas de cursos e faculdades do seu interesse e receba atualizações com as melhores ofertas disponíveis</p>
+
+        <Semestres onClick={this.handleClickSemestre} selected={this.state.semestre} />
+        <ListaDeFavoritas className="list-bfav" semestre={this.state.semestre} onClickAdicionar="{this."/>
+        <Modal />
+      </React.Fragment>
+    );
+  }  
 }
 
 export default App;

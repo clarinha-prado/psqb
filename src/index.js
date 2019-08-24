@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Semestres from './Semestres';
-import BolsasFavoritas from './BolsasFavoritas';
+import App from './App';
 
-ReactDOM.render(<Semestres />, document.getElementById('Semestres'));
-ReactDOM.render(<BolsasFavoritas />, document.getElementById('BolsasFavoritas'));
+ReactDOM.render(<App />, document.getElementById('App'));
+

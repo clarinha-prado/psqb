@@ -59,57 +59,7 @@
         <a class="bred__text_current bred__text" href="#">Bolsas favoritas</a>
     </nav>
     
-    <main class="cont">
-        <p class="cont__text cont__text_title">Bolsas favoritas</p>
-        <p class="cont__text cont__text_regular">Adicione bolsas de cursos e faculdades do seu interesse e receba atualizações com as melhores ofertas disponíveis</p>
-        
-        <section id="Semestres"></section>
-        
-        <section class="list-bfav" id='BolsasFavoritas'></section>
-
-            <article class="bfav-container">
-                <img class="bfav-logo"src="./img/anhanguera.png" alt="Anhanguera"/>
-                <p class="bfav__escola">ANHANGUERA</p>
-                <p class="bfav__curso">Arquitetura e Urbanismo</p>
-                <p class="bfav__avaliacao">3.8
-                    <i class="fas fa-star bfav__estrelas"></i>
-                    <i class="fas fa-star bfav__estrelas"></i>
-                    <i class="fas fa-star bfav__estrelas"></i>
-                    <i class="fas fa-star-half-alt bfav__estrelas"></i>
-                    <i class="far fa-star bfav__estrelas"></i>
-                </p>
-                <hr class="b__separator" />
-                <p class="bfav__escola">PRESENCIAL &middot; NOITE</p>
-                <p class="bfav__dt-inicio">Início das aulas em: 01/07/2019</p>
-                <hr class="b__separator">
-                <p class="bfav__text-title-indisp">Bolsa indisponível.</p>
-                <p class="bfav__text-aviso-indisp">Entre em contato com nosso<br>atendimento para saber mais.</p>
-                <button class="bfav__button bfav__button-excluir">Excluir</button>
-                <button class="bfav__button bfav__button-oferta bfav__button-oferta_disabled">Indisponível</button>
-            </article>
-
-            <article class="bfav-container">
-                <img class="bfav-logo"src="./img/anhanguera.png" alt="Anhanguera"/>
-                <p class="bfav__escola">ANHANGUERA</p>
-                <p class="bfav__curso">Arquitetura e Urbanismo</p>
-                <p class="bfav__avaliacao">3.8
-                    <i class="fas fa-star bfav__estrelas"></i>
-                    <i class="fas fa-star bfav__estrelas"></i>
-                    <i class="fas fa-star bfav__estrelas"></i>
-                    <i class="fas fa-star-half-alt bfav__estrelas"></i>
-                    <i class="far fa-star bfav__estrelas"></i>
-                </p>
-                <hr class="b__separator" />
-                <p class="bfav__escola">PRESENCIAL &middot; NOITE</p>
-                <p class="bfav__dt-inicio">Início das aulas em: 01/07/2019</p>
-                <hr class="b__separator">
-                <p class="bfav__text-bold">Mensalidade com o Quero Bolsa:</p>
-                <p class="bfav__preco">R$1.482,31</p>
-                <p class="bfav__oferta">R$453,63 <span class="bfav__text-oferta">/ mês</span></p>
-                <button class="bfav__button bfav__button-excluir">Excluir</button>
-                <button class="bfav__button bfav__button-oferta bfav__button-oferta_enabled">Ver oferta</button>
-            </article>
-        </section>
+    <main class="cont" id="App">
     </main>
     
     <footer class="foot__container foot__1st-line">
@@ -157,112 +107,12 @@
             Feito com <i class="far fa-heart foot__heart"></i> pela Quero Educação
     </footer>
     
-    <!-- -------------------------------------------------- The Modal ---------------------------------------------------------- -->
-    <main id="modal" class="modal">
-
-      <!-- Modal content -->
-      <header class="modal__header">
-        <p class="modal__close">&times;</p>
-      </header>
-      <section class="modal__content">
-          <div class="modal__title">Adicionar bolsa</div>
-          <div class="modal__text">Filtre e adicione as bolsas de seu interesse.</div>
-        <section class="fdisp__container">
-            <div class="fdisp__field-container">
-                <label class="fdisp__field-caption" for="fname">SELECIONE SUA CIDADE</label><br>
-                <input type="text" class="fdisp__input fdisp__field-content" id="fname" name="cidade" value="São José dos Campos">
-            </div>
-            
-            <div class="fdisp__field-container">
-              <label class="fdisp__field-caption" for="fname">SELECIONE O CURSO <span class="fdisp__text-extra">DE SUA PREFERÊNCIA</span></label><br>
-                <select class="fdisp__select  fdisp__field-content" name="curso">
-                    <option value="au">Australia</option>
-                    <option value="ca">Canada</option>
-                    <option value="usa">USA</option>
-                </select>
-                <i class="fa fa-chevron-down"></i>
-            </div>
-            
-            <div class="fdisp__field-container">
-                <label class="fdisp__field-caption" for="fname">COMO VOCÊ QUER ESTUDAR?</label><br>
-                    <i class="fas fa-check-square fdisp__checkbox fdisp__checkbox_checked"></i>
-                    <span class="fdisp__checkbox-text">Presencial</span>
-                    <i class="far fa-square fdisp__checkbox fdisp__checkbox_unchecked"></i>
-                    <span class="fdisp__checkbox-text">A distância</span>
-            </div>
-            
-            <div class="fdisp__field-container">
-                <label class="fdisp__field-caption" for="fname">ATÉ QUANTO PODE PAGAR?</label><br>
-                  <span class="fdisp__moeda">R$<span class="filtro__caption" id="valor"></span></span>
-                  <input type="range" min="100" max="10000" value="10000" class="fdisp__slider" id="mensalidade">
-
-                <script>
-                //() => {separador-milhar(y.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
-                var slider = document.getElementById("mensalidade");
-                var sliderValue = document.getElementById("valor");
-                var valorFormatado = slider.value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
-                sliderValue.innerHTML = valorFormatado;
-
-                slider.oninput = function() {
-                  var valorFormatado = slider.value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
-                  sliderValue.innerHTML = valorFormatado;
-                }
-                </script>              
-            </div>
-        </section>
-        <section class="list-bdisp__container">
-                 <article class="list-bdisp__row">
-                   <div class="list-bdisp__text-header">Resultado:</div>
-                   <div class="list-bdisp__text-header list-bdisp__header-column2">Ordenar por</div>
-                   
-                   <div class="bdisp__select-container"> 
-                        <select class="bdisp__select-escola bdisp__select-text" name="curso">
-                            <option value="au" class="bdisp__select-text">Nome da Faculdade</option>
-                             <option value="ca" class="bdisp__select-text">Preço</option>
-                             <option value="usa" class="bdisp__select-text">Curso</option>
-                         </select>
-                         <i class="fa fa-chevron-down"></i>
-                   </div>
-                </article>
-
-                 <article class="list-bdisp__row">
-                   <div>
-                        <i class="fas fa-check-square bdisp__checkbox bdisp__checkbox_checked"></i>
-                   </div>
-                   <div class="bdisp__logo-container">
-                        <img class="bdisp__logo" src="./img/anhanguera.png" alt="Anhanguera"/>
-                   </div>
-                     <div class="bdisp__curso-container">Sistemas da Informação<br>
-                         <span class="bdisp__tipo-curso">Bacharelado</span>
-                     </div>
-                   <div class="bdisp__preco-container">Bolsa de 
-                       <span class="bdisp__preco">75%<br>R$ 425/mês</span>
-                           </div>
-                </article>
-            </section>            
-
-        <section class="list-bdisp__button-container">
-            <button class="list-bdisp__button list-bdisp__button-cancel">Cancelar</button>
-            <button class="list-bdisp__button list-bdisp__button-add">Adicionar bolsa(s)</button>
-        </section>
-    </section>
-      </main>
-
 <script>
 // Get the modal
 var modal = document.getElementById("modal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("modal__button-open");
-
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("modal__close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-  margin: auto;
-};
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
