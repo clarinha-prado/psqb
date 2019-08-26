@@ -1,3 +1,10 @@
+/*******************************************************************************
+ * Renderiza a janela modal com o filtro e a lista de bolsas disponíveis.
+ * Armazena os valores dos campos do filtro no estado e os repassa para filtra-
+ * gem das bolsas.
+ * 
+ * @returns Modal, Filtro, ListaDeDisponiveis
+ */
 import React from 'react';
 import Filtro from './Filtro';
 import ListaDeDisponiveis from './ListaDeDisponiveis';
@@ -9,31 +16,31 @@ class Modal extends React.Component {
     this.handleOnChangeFiltro = this.handleOnChangeFiltro.bind(this);
     
     this.state = {cidade: "", 
-                  curso: "",
-                  presencial: true, 
-                  distancia: true, 
-                  valor: 10000};
+      curso: "",
+      presencial: true, 
+      distancia: true, 
+      valor: 10000};
   }
   
   handleOnChangeFiltro(event) {
     switch (event.target.id) {
-        case 'cidade':
-          this.setState({cidade: event.target.value});
-          break;
-        case 'curso':
-          this.setState({curso: event.target.value});
-          break;
-        case 'presencial':
-          this.setState({presencial: !this.state.presencial});
-          break;
-        case 'distancia':
-          this.setState({distancia: !this.state.distancia});
-          break;
-        case 'valor':
-          this.setState({valor: event.target.value});
-          break;
-        default:
-          break;
+      case 'cidade':
+        this.setState({cidade: event.target.value});
+        break;
+      case 'curso':
+        this.setState({curso: event.target.value});
+        break;
+      case 'presencial':
+        this.setState({presencial: !this.state.presencial});
+        break;
+      case 'distancia':
+        this.setState({distancia: !this.state.distancia});
+        break;
+      case 'valor':
+        this.setState({valor: event.target.value});
+        break;
+      default:
+        break;
     }
     console.log(this.state);
   }
@@ -53,9 +60,10 @@ class Modal extends React.Component {
             
             <Filtro onChange={this.handleOnChangeFiltro} state={this.state}/>
             <ListaDeDisponiveis state={this.state} 
-                                semestre={this.props.semestre} 
-                                bolsas={this.props.bolsas}
-                                onClick = {this.props.onClickChecar}/>
+              semestre={this.props.semestre} 
+              bolsas={this.props.bolsas}
+              onClick = {this.props.onClickChecar}
+              onChange = {this.props.onHeaderChange}/>
             
             <section className="lista-disp__button-container">
               <button  onClick={this.props.onClickCancelar} className="lista-disp__button lista-disp__button-cancel">Cancelar</button>

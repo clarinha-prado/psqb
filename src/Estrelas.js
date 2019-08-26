@@ -1,3 +1,8 @@
+/*******************************************************************************
+ * Renderiza 5 estrelas que representam a avaliação da universidade
+ * 
+ * @returns Estrelas
+ */
 import React from 'react';
 
 class Estrelas extends React.Component {
@@ -29,10 +34,11 @@ class Estrelas extends React.Component {
       estrelas.push(<i className="far fa-star bfav__estrela"></i>);
     }
     
-    return (  <React.Fragment>
-              {estrelas} 
-               </React.Fragment>
-            );
+    return (  
+      <React.Fragment>
+        {estrelas} 
+      </React.Fragment>
+    );
   }
 };
 

@@ -1,3 +1,7 @@
+/*******************************************************************************
+ * Ponto de entrada da execução pelo ReactJs.
+ * Renderiza o App.
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

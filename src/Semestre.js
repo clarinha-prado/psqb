@@ -1,7 +1,8 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/******************************************************************************* 
+ * Grupo de botões para seleção dos semestres: "todos", 2019.2, 2020.1, 2020.2. 
+ * ...
+ * 
+ * @returns Semestre 
  */
 
 import React from 'react';
@@ -18,24 +19,24 @@ class Semestre extends React.Component {
       <section className="sems">
         <div className="sems__border">
           <button name='todos' 
-                  onClick={this.props.onClick}
-                  className={`sems__button sems__button_first
-                    ${this.props.selected === "todos" ? " sems__button_selected" : " sems__button_unselected"}`}>
-                  Todos os semestres
+            onClick={this.props.onClick}
+            className={`sems__button sems__button_first
+              ${this.props.selected === "todos" ? " sems__button_selected" : " sems__button_unselected"}`}>
+            Todos os semestres
           </button>
           
           <button name={this.state.botoes[0].id} 
-                  onClick={this.props.onClick}
-                  className={`sems__button 
-                    ${this.props.selected === this.state.botoes[0].id ? " sems__button_selected" : " sems__button_unselected"}`}>
-                  {this.state.botoes[0].label}
+            onClick={this.props.onClick}
+            className={`sems__button 
+              ${this.props.selected === this.state.botoes[0].id ? " sems__button_selected" : " sems__button_unselected"}`}>
+            {this.state.botoes[0].label}
           </button>
           
           <button name={this.state.botoes[1].id} 
-                  onClick={this.props.onClick}
-                  className={`sems__button sems__button_last
-                    ${this.props.selected === this.state.botoes[1].id ? " sems__button_selected" : " sems__button_unselected"}`}>
-                  {this.state.botoes[1].label}
+            onClick={this.props.onClick}
+            className={`sems__button sems__button_last
+              ${this.props.selected === this.state.botoes[1].id ? " sems__button_selected" : " sems__button_unselected"}`}>
+            {this.state.botoes[1].label}
           </button>
         </div>
       </section>

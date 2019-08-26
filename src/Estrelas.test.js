@@ -1,3 +1,6 @@
+/*******************************************************************************
+ * Teste unitário do componente Estrelas
+ */
 import React from 'react';
 import Estrelas from './Estrelas.js';
 

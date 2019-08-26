@@ -1,3 +1,12 @@
+/*******************************************************************************
+ * Renderiza uma tabela com a lista de todas as bolsas disponíveis no semestre
+ * selecionado.
+ * 
+ * Filtra as bolsas exibidas, de acordo com os valores que o usuário configurou
+ * nos campos de filtro: cidade, curso, presencial, à distância e valor.
+ * 
+ * @returns ListaDeDisponiveis
+ */
 import React from 'react';
 
 class ListaDeDisponiveis extends React.Component {
@@ -11,11 +20,11 @@ class ListaDeDisponiveis extends React.Component {
 
             <div className="bdisp__select-container"> 
               <select className="bdisp__select-escola bdisp__select-text" 
-                onChange={this.handleHeaderChange}
+                onChange={this.props.onChange}
                 id="ordenar">
-                <option value="au" className="bdisp__select-text">Nome da Faculdade</option>
-                <option value="ca" className="bdisp__select-text">Preço</option>
-                <option value="usa" className="bdisp__select-text">Curso</option>
+                <option value="Nome da Faculdade" className="bdisp__select-text">Nome da Faculdade</option>
+                <option value="Curso" className="bdisp__select-text">Nome do Curso</option>
+                <option value="Valor" className="bdisp__select-text">Mensalidade</option>
                </select>
                <i className="fa fa-chevron-down"></i>
             </div>
@@ -43,7 +52,7 @@ class ListaDeDisponiveis extends React.Component {
             </i>
           </div>
           <div className="bdisp__logo-container">
-            <img className="bdisp__logo" src="./img/anhanguera.png" alt="Anhanguera"/>
+            <img className="bdisp__logo" src={bolsas[i].university.logo_url} alt={bolsas[i].university.name}/>
           </div>
           <div className="bdisp__curso-container">{bolsas[i].course.name}<br />
             <span className="bdisp__tipo-curso">{bolsas[i].course.level}</span>
@@ -65,12 +74,12 @@ class ListaDeDisponiveis extends React.Component {
 
     for (i in bolsas) {
       if ((this.props.semestre === "todos" || this.props.semestre === bolsas[i].enrollment_semester) &&
-          (this.props.state.cidade === ""  || (this.props.state.cidade).toUpperCase() === (bolsas[i].campus.city).toUpperCase()) &&
-          (this.props.state.curso === "" || this.props.state.curso === bolsas[i].course.name) &&
-          ((this.props.state.presencial && bolsas[i].course.kind === "Presencial") || 
-          (this.props.state.distancia && bolsas[i].course.kind === "EaD")) &&
-          (this.props.state.valor >= Number(bolsas[i].price_with_discount))) {
-            bolsasFiltradas.push(bolsas[i]);
+        (this.props.state.cidade === ""  || (this.props.state.cidade).toUpperCase() === (bolsas[i].campus.city).toUpperCase()) &&
+        (this.props.state.curso === "" || this.props.state.curso === bolsas[i].course.name) &&
+        ((this.props.state.presencial && bolsas[i].course.kind === "Presencial") || 
+        (this.props.state.distancia && bolsas[i].course.kind === "EaD")) &&
+        (this.props.state.valor >= Number(bolsas[i].price_with_discount))) {
+          bolsasFiltradas.push(bolsas[i]);
       }
     }
     return bolsasFiltradas;

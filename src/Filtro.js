@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Renderiza os campos de filtro da janela modal, para busca de bolsas disponí-
+ * veis
+ * 
+ * @returns 
+ */
 import React from 'react';
 
 class Filtro extends React.Component {

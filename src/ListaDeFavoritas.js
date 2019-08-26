@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Renderiza a lista de bolsas favoritas, e o botão para mostrar a janela modal
+ * com a lista de bolsas disponíveis.
+ *  
+ * @returns ListaDeFavoritas, BolsaFavorita
+ */
 import React from 'react';
 import BolsaFavorita from './BolsaFavorita';
 

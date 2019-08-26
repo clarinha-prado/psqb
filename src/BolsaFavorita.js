@@ -1,3 +1,8 @@
+/*******************************************************************************
+ * Representa uma bolsa na lista de bolsas favoritas.
+ * 
+ * @returns: BolsaFavorita, Estrelas
+ */
 import React from 'react';
 import Estrelas from './Estrelas';
 
@@ -6,7 +11,7 @@ class BolsaFavorita extends React.Component {
     var bolsa = this.props.dados;
     return (
       <article className="bfav-container">
-        <img className="bfav-logo"src="./img/estacio.png" alt="Anhanguera" />
+        <img className="bfav-logo"src={bolsa.university.logo_url} alt={bolsa.university.name} />
         <p className="bfav__escola">{bolsa.university.name}</p>
         <p className="bfav__curso">{bolsa.course.name}</p>
         <p>
@@ -25,25 +30,25 @@ class BolsaFavorita extends React.Component {
 
   htmlBolsaDisponivel(bolsa) {
     return(
-        <React.Fragment>
-          <p className="bfav__text-bold">Mensalidade com o Quero Bolsa:</p>
-          <p className="bfav__preco">
-            R${(bolsa.full_price).toLocaleString('pt-br', {minimumFractionDigits: 2})}
-          </p>
-          <p className="bfav__oferta">
-            R${(bolsa.price_with_discount).toLocaleString('pt-br', {minimumFractionDigits: 2})} 
-            <span className="bfav__text-oferta">/ mês</span></p>
-        </React.Fragment>
-      );
+      <React.Fragment>
+        <p className="bfav__text-bold">Mensalidade com o Quero Bolsa:</p>
+        <p className="bfav__preco">
+          R${(bolsa.full_price).toLocaleString('pt-br', {minimumFractionDigits: 2})}
+        </p>
+        <p className="bfav__oferta">
+          R${(bolsa.price_with_discount).toLocaleString('pt-br', {minimumFractionDigits: 2})} 
+          <span className="bfav__text-oferta">/ mês</span></p>
+      </React.Fragment>
+    );
   }
 
   htmlBolsaIndisponivel(bolsa) {
     return(
-        <React.Fragment>
-          <p className="bfav__text-title-indisp">Bolsa indisponível.</p>
-          <p className="bfav__text-aviso-indisp">Entre em contato com nosso<br />atendimento para saber mais.</p>
-        </React.Fragment>
-                );
+      <React.Fragment>
+        <p className="bfav__text-title-indisp">Bolsa indisponível.</p>
+        <p className="bfav__text-aviso-indisp">Entre em contato com nosso<br />atendimento para saber mais.</p>
+      </React.Fragment>
+    );
   }
   
   htmlBotoes(bolsa) {
@@ -54,15 +59,15 @@ class BolsaFavorita extends React.Component {
     labelBotao = (bolsa.enabled) ? "Ver oferta" : "Indisponível";
     
     return(
-        <React.Fragment>
-          <button className="bfav__button bfav__button-excluir"
-                  name={"Excluir".concat(this.props.indice) }
-                  onClick={this.props.onClick}>
-                  Excluir
-          </button>
-          <button className={`bfav__button bfav__button-oferta ${estiloBotao}`}>{labelBotao}</button>
-        </React.Fragment>
-            );
+      <React.Fragment>
+        <button className="bfav__button bfav__button-excluir"
+          name={"Excluir".concat(this.props.indice) }
+          onClick={this.props.onClick}>
+          Excluir
+        </button>
+        <button className={`bfav__button bfav__button-oferta ${estiloBotao}`}>{labelBotao}</button>
+      </React.Fragment>
+    );
   }
   
 };
