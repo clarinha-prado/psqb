@@ -20,117 +20,56 @@
     <title>Quero Bolsa</title>
   </head>
   <body class="site-page">
-    <noscript>Você precisa habilitar JavaScript para visualizar esta página.</noscript>
-    
-    <header class="head__container">
-        <section class="head__section head__section1">
-                <i class="fas fa-info-circle head__icon"></i>
-                <p class="head__text head__text_regular">Como funciona</p>
-        </section>
-            
-        <section class="head__section head__section2">
-            <i class="fab fa-whatsapp head__icon"></i>
-            <div class="head__text-container">
-                <p class="head__text head__text_regular">0800 123 2222</p>
-                <p class="head__text head__text_small">Envie mensagem ou ligue</p></div>
-        </section>
-            
-        <section class="head__section">
-            <img class="head__logo" src="./img/logo.svg" alt="Quero Bolsa" />
-        </section>
-            
-        <section class="head__section head__section4">
-            <p class="head__text head__text_regular">Nome Sobrenome</p>
-            <i class="far fa-user-circle head__icon"></i>
-        </section>
-    </header>
-    
-    <nav class="menu">
-        <a class="menu__item menu__item_regular" href="#">Minha conta</a>
-        <a class="menu__item menu__item_small" href="#">Pré-matrículas</a>
-        <a class="menu__item menu__item_small menu__item_selected" href="#">Bolsas favoritas</a>
-    </nav>
-    
-    <nav class="bred">
-        <a class="bred__text_parent bred__text" href="#">Home</a>
-        <a class="bred__separator bred__text" href="#">/</a> 
-        <a class="bred__text_parent bred__text" href="#">Minha conta</a>
-        <a class="bred__separator bred__text" href="#">/</a> 
-        <a class="bred__text_current bred__text" href="#">Bolsas favoritas</a>
-    </nav>
-    
-    <main class="cont" id="App">
-    </main>
+    <span id="App"></span>
     
     <footer class="foot__container foot__1st-line">
         <section class="foot__section">
-            <i class="fab fa-whatsapp foot__icon"></i>
-            <p class="foot__text foot__text_regular">
-                0800 123 2222
-                <br>
-                <span class="foot__text foot__text_small">
-                    Seg - Sex 8h-22h
-                </span>
-            </p>
+          <i class="fab fa-whatsapp foot__icon"></i>
+          <p class="foot__text foot__text_regular">
+            0800 123 2222
+            <br>
+            <span class="foot__text foot__text_small">
+                Seg - Sex 8h-22h
+            </span>
+          </p>
         </section>
         <section class="foot__section">
-            <i class="far fa-comments foot__icon"></i>
-            <p class="foot__text foot__text_regular">
-                Chat ao vivo
-                <br>
-                <span class="foot__text foot__text_small">
-                    Seg - Sex 8h-22h</p>
-                </span>
+          <i class="far fa-comments foot__icon"></i>
+          <p class="foot__text foot__text_regular">
+            Chat ao vivo
+            <br>
+            <span class="foot__text foot__text_small">
+              Seg - Sex 8h-22h</p>
+            </span>
         </section>
         <section class="foot__section">
-            <i class="far fa-envelope foot__icon"></i>
-            <p class="foot__text foot__text_regular">
-                Mande um e-mail
-                <br>
-                <span class="foot__text foot__text_small">
-                    Respondemos rapidinho
-                </span>
-            </p>
+          <i class="far fa-envelope foot__icon"></i>
+          <p class="foot__text foot__text_regular">
+            Mande um e-mail
+            <br>
+            <span class="foot__text foot__text_small">
+              Respondemos rapidinho
+            </span>
+          </p>
         </section>
         <section class="foot__section">
-            <i class="fas fa-info-circle foot__icon"></i>
-            <p class="foot__text foot__text_regular">
-                Central de ajuda
-                <br>
-                <span class="foot__text foot__text_small">
-                    Encontre todas as respostas
-                </span>
-            </p>
+          <i class="fas fa-info-circle foot__icon"></i>
+          <p class="foot__text foot__text_regular">
+            Central de ajuda
+            <br>
+            <span class="foot__text foot__text_small">
+              Encontre todas as respostas
+            </span>
+          </p>
         </section>
     </footer>
     <footer class="foot__container foot__2nd-line foot__text  foot__text_smaller">
-            Feito com <i class="far fa-heart foot__heart"></i> pela Quero Educação
+      Feito com <i class="far fa-heart foot__heart"></i> pela Quero Educação
     </footer>
     
-<script>
-// Get the modal
-var modal = document.getElementById("modal");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("modal__close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-</script>
-
       <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <!--    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script> -->
-    <script type="text/jsx" src="../src/Semestres.js"></script>
 
   </body>
 </html>

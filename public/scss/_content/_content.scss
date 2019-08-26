@@ -9,10 +9,11 @@
   Author     : Clarinha
 */
 @import "../_variables.scss";
-@import "_bolsas-favoritas/_bolsas-favoritas.scss";
-@import "_bolsas-disponiveis/_bolsas-disponiveis.scss";
+@import "_bolsas-favoritas/_lista-favoritas.scss";
+@import "_bolsas-disponiveis/_lista-disponiveis.scss";
 @import "_modal/modal.scss";
 @import "_breadcrumb.scss";
+@import "_semestres.scss";
 
 .cont {
   padding-left: $site-margin;

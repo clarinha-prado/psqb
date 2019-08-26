@@ -78,28 +78,28 @@
   }
 
   .bdisp__logo {
-    width:85px;
-    height:22px;
+    width:100px;
+    height:40px;
   }
 }
 
 @media screen and (max-width:550px) {
   .bdisp__preco-container {
     font-size: 11px;
-    width: 25%;
+    width: 35%;
   }
 
   .bdisp__curso-container {
     font-size: 11px;
-    width: 46%;
+    width: 40%;
   }
 
   .bdisp__logo-container {
-    width: 22%;
+    width: 26%;
   }
   
   .bdisp__logo {
-    width:77px;
+    width:67px;
     height:20px;
   }
 }
@@ -107,15 +107,15 @@
 @media screen and (min-width:550px) and (max-width:678px) {
   // redefinir tamanho das colunas logo, curso e bolsa
   .bdisp__preco-container {
-    width: 25%;
-  }
-  
-  .bdisp__logo-container {
     width: 22%;
   }
   
+  .bdisp__logo-container {
+    width: 35%;
+  }
+  
   .bdisp__curso-container {
-    width: 46%;
+    width: 36%;
   }
 }
 
@@ -129,7 +129,7 @@
   }
 
   .bdisp__logo-container {
-    width: 22%;
+    width: 25%;
   }
 }
 
@@ -141,6 +141,7 @@
 
 .bdisp__preco {
   color: $verde;
+  margin-left: 4px;
   font-weight: bold;
 }
 
@@ -154,7 +155,10 @@
 }
 
 .bdisp__logo {
-  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: 5px;
 }
 
 .bdisp__logo-container {

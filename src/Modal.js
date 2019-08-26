@@ -1,95 +1,69 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import React from 'react';
+import Filtro from './Filtro';
+import ListaDeDisponiveis from './ListaDeDisponiveis';
 
 class Modal extends React.Component {
   constructor(props) {
     super(props);
+    
+    this.handleOnChangeFiltro = this.handleOnChangeFiltro.bind(this);
+    
+    this.state = {cidade: "", 
+                  curso: "",
+                  presencial: true, 
+                  distancia: true, 
+                  valor: 10000};
+  }
+  
+  handleOnChangeFiltro(event) {
+    switch (event.target.id) {
+        case 'cidade':
+          this.setState({cidade: event.target.value});
+          break;
+        case 'curso':
+          this.setState({curso: event.target.value});
+          break;
+        case 'presencial':
+          this.setState({presencial: !this.state.presencial});
+          break;
+        case 'distancia':
+          this.setState({distancia: !this.state.distancia});
+          break;
+        case 'valor':
+          this.setState({valor: event.target.value});
+          break;
+        default:
+          break;
+    }
+    console.log(this.state);
   }
   
   render() {
+    window.scrollTo(0,0);
     return (
       <React.Fragment>  
-        <main id="modal" class="modal">
+        <main id="modal" className="modal">
 
-          <header class="modal__header">
-            <p class="modal__close">&times;</p>
+          <header id="header" className="modal__header">
+            <p className="modal__close" onClick={this.props.onClickCancelar}>&times;</p>
           </header>
-          <section class="modal__content">
-            <div class="modal__title">Adicionar bolsa</div>
-            <div class="modal__text">Filtre e adicione as bolsas de seu interesse.</div>
-          <section class="fdisp__container">
-            <div class="fdisp__field-container">
-              <label class="fdisp__field-caption" for="fname">SELECIONE SUA CIDADE</label><br />
-              <input type="text" class="fdisp__input fdisp__field-content" id="fname" name="cidade" value="São José dos Campos" />
-            </div>
+          <section className="modal__content">
+            <div className="modal__title">Adicionar bolsa</div>
+            <div className="modal__text">Filtre e adicione as bolsas de seu interesse.</div>
             
-            <div class="fdisp__field-container">
-              <label class="fdisp__field-caption" for="fname">SELECIONE O CURSO <span class="fdisp__text-extra">DE SUA PREFERÊNCIA</span></label><br />
-                <select class="fdisp__select  fdisp__field-content" name="curso">
-                  <option value="au">Australia</option>
-                  <option value="ca">Canada</option>
-                  <option value="usa">USA</option>
-                </select>
-                <i class="fa fa-chevron-down"></i>
-            </div>
+            <Filtro onChange={this.handleOnChangeFiltro} state={this.state}/>
+            <ListaDeDisponiveis state={this.state} 
+                                semestre={this.props.semestre} 
+                                bolsas={this.props.bolsas}
+                                onClick = {this.props.onClickChecar}/>
             
-            <div class="fdisp__field-container">
-              <label class="fdisp__field-caption" for="fname">COMO VOCÊ QUER ESTUDAR?</label><br />
-                <i class="fas fa-check-square fdisp__checkbox fdisp__checkbox_checked"></i>
-                <span class="fdisp__checkbox-text">Presencial</span>
-                <i class="far fa-square fdisp__checkbox fdisp__checkbox_unchecked"></i>
-                <span class="fdisp__checkbox-text">A distância</span>
-            </div>
-            
-            <div class="fdisp__field-container">
-              <label class="fdisp__field-caption" for="fname">ATÉ QUANTO PODE PAGAR?</label><br />
-                <span class="fdisp__moeda">R$<span class="filtro__caption" id="valor"></span></span>
-                <input type="range" min="100" max="10000" value="10000" class="fdisp__slider" id="mensalidade" />
-            </div>
+            <section className="lista-disp__button-container">
+              <button  onClick={this.props.onClickCancelar} className="lista-disp__button lista-disp__button-cancel">Cancelar</button>
+              <button onClick={this.props.onClickAdicionar} className="lista-disp__button lista-disp__button-add">Adicionar bolsa(s)</button>
+            </section>
           </section>
-          <section class="list-bdisp__container">
-            <article class="list-bdisp__row">
-              <div class="list-bdisp__text-header">Resultado:</div>
-              <div class="list-bdisp__text-header list-bdisp__header-column2">Ordenar por</div>
-
-              <div class="bdisp__select-container"> 
-                <select class="bdisp__select-escola bdisp__select-text" name="curso">
-                  <option value="au" class="bdisp__select-text">Nome da Faculdade</option>
-                  <option value="ca" class="bdisp__select-text">Preço</option>
-                  <option value="usa" class="bdisp__select-text">Curso</option>
-                 </select>
-                 <i class="fa fa-chevron-down"></i>
-              </div>
-            </article>
-
-            <article class="list-bdisp__row">
-              <div>
-                <i class="fas fa-check-square bdisp__checkbox bdisp__checkbox_checked"></i>
-              </div>
-              <div class="bdisp__logo-container">
-                <img class="bdisp__logo" src="./img/anhanguera.png" alt="Anhanguera"/>
-              </div>
-              <div class="bdisp__curso-container">Sistemas da Informação<br />
-                <span class="bdisp__tipo-curso">Bacharelado</span>
-              </div>
-              <div class="bdisp__preco-container">Bolsa de 
-                <span class="bdisp__preco">75%<br />R$ 425/mês</span>
-             </div>
-            </article>
-          </section>            
-
-          <section class="list-bdisp__button-container">
-              <button class="list-bdisp__button list-bdisp__button-cancel">Cancelar</button>
-              <button class="list-bdisp__button list-bdisp__button-add">Adicionar bolsa(s)</button>
-          </section>
-        </section>
-      </main>
-    </React.Fragment>
+        </main>
+      </React.Fragment>
     );
   }
   

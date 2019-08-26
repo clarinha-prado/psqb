@@ -1,23 +1,16 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import React from 'react';
 import Estrelas from './Estrelas';
 
 class BolsaFavorita extends React.Component {
   render() {
     var bolsa = this.props.dados;
-    
     return (
       <article className="bfav-container">
         <img className="bfav-logo"src="./img/estacio.png" alt="Anhanguera" />
         <p className="bfav__escola">{bolsa.university.name}</p>
         <p className="bfav__curso">{bolsa.course.name}</p>
         <p>
-        <span className="bfav__avaliacao">{bolsa.university.score}</span>
+        <span className="bfav__avaliacao">{(bolsa.university.score).toFixed(1)}</span>
         <Estrelas score={bolsa.university.score} />
         </p>
         <hr className="b__separator" />

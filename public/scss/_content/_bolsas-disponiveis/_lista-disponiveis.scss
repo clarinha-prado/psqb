@@ -2,7 +2,7 @@
   Metodologia BEM - Bloco Elemento Modificador
 
   Bloco: lista de bolsas disponíveis
-  Prefixo: list-bdisp
+  Prefixo: lista-disp
   Elementos: container, row, text-header, button-container, select-container,
              button (cancel / add)filter (definido em _filtro-bdisp), 
              bdisp (definido em _bolsa-disponivel)
@@ -14,7 +14,7 @@
 @import "_bolsa-disponivel.scss";
 @import "_filtro-bolsas-disponiveis.scss";
 
-.list-bdisp__container {
+.lista-disp__container {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -24,7 +24,7 @@
   width: 100%;
 }
 
-.list-bdisp__row {
+.lista-disp__row {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -35,7 +35,7 @@
   height: 74px;
 }
 
-.list-bdisp__text-header {
+.lista-disp__text-header {
   color: $preto;
   font-size: 13px;
   font-weight: bold;
@@ -43,19 +43,19 @@
   display:block;
 }
 
-.list-bdisp__header-column2 {
+.lista-disp__header-column2 {
   margin-left: auto;
   width:92px;
 }
 
-.list-bdisp__button-container {
+.lista-disp__button-container {
   display: flex;
   justify-content: flex-end;
   width: 100%;
   margin-top: 36px;
 }
 
-.list-bdisp__button {
+.lista-disp__button {
   border-radius: 5px;
   border-width: 1px;
   border-style: solid;
@@ -65,7 +65,7 @@
   margin: 0 10px;
 }
 
-.list-bdisp__button-cancel {
+.lista-disp__button-cancel {
   border-color: $azul-secundario;
   background-color: white;
   color: $azul-secundario;
@@ -73,7 +73,7 @@
   margin-right: 3px;
 }
 
-.list-bdisp__button-add {
+.lista-disp__button-add {
   width: 155px;
   border-color: $amarelo-secundario;
   background-color: $amarelo-principal;

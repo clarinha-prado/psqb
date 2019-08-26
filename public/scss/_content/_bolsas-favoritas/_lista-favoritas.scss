@@ -2,7 +2,7 @@
   Metodologia BEM - Bloco Elemento Modificador
 
   Bloco: lista de bolsas favoritas
-  Prefixo: list-bfav
+  Prefixo: lista-fav
   Elementos: add-container, add-icon, add-title, add-text, 
              bfav (definido em _bolsa-favorita)
 
@@ -12,25 +12,25 @@
 @import "../../_variables.scss";
 @import "_bolsa-favorita.scss";
 
-.list-bfav {
+.lista-fav {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
 
 @media screen and (max-width: 856px) {
-  .list-bfav {
+  .lista-fav {
       justify-content: center;
   }
 }
 
 @media screen and (min-width: 857px) {
-  .list-bfav {
+  .lista-fav {
       justify-content: flex-start;
   }
 }
 
-.list-bfav__add-container {
+.lista-fav__add-container {
   width: 236px;
   display: flex;
   flex-direction: column;
@@ -46,24 +46,24 @@
 }
 
 @media screen and (min-width:574px) {
-  .list-bfav__add-container {
+  .lista-fav__add-container {
       height: 380px;
   }
 }
 
 @media screen and (max-width:574px) {
-  .list-bfav__add-container {
+  .lista-fav__add-container {
       height: 200px;
   }
 }
 
-.list-bfav__add-icon {
+.lista-fav__add-icon {
   color: $azul-principal;
   font-size: 55px;
   margin-bottom: 15%;
 }
 
-.list-bfav__add-title {
+.lista-fav__add-title {
   color: $preto;
   font-size: 18px;
   font-weight: bold;
@@ -71,20 +71,20 @@
   line-height: 0px;
 }
 
-.list-bfav__add-text {
+.lista-fav__add-text {
   color: $preto;
   font-size: 12px;
   line-height: 20px;
 }
 
 @media screen and (min-width:574px) {
-  .list-bfav__add-container {
+  .lista-fav__add-container {
       height: 380px;
   }
 }
 
 @media screen and (max-width:574px) {
-  .list-bfav__add-container {
+  .lista-fav__add-container {
       height: 200px;
   }
 }
