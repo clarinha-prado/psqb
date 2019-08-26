@@ -1,5 +1,5 @@
 import React from 'react';
-import Semestres from './Semestres';
+import Semestre from './Semestre';
 import ListaDeFavoritas from './ListaDeFavoritas';
 import Modal from './Modal';
 import Header from './Header';
@@ -23,8 +23,24 @@ class App extends React.Component {
     this.handleClickFecharModal = this.handleClickFecharModal.bind(this);
     this.handleClickAdicionarBolsas = this.handleClickAdicionarBolsas.bind(this);
     this.handleClickExcluirBolsa = this.handleClickExcluirBolsa.bind(this);
-
+    this.handleHeaderChange = this.handleHeaderChange.bind(this);
  }
+
+  handleHeaderChange(event) {
+    let bolsas = (this.state.listaDeDisponiveis).slice();
+
+    switch (event.target.value) {
+      case 'Nome da Faculdade':
+        break;
+      case 'Curso':
+        break;
+      case 'Preço':
+        break;
+      default:
+        break;
+    }
+    this.setState({listaDeDisponiveis: bolsas});
+  }
 
   //excluir bolsa da coleção de bolsas e atualizar repositório local
   handleClickExcluirBolsa(event) {
@@ -134,7 +150,7 @@ class App extends React.Component {
           <p className="cont__text cont__text_title">Bolsas favoritas</p>
           <p className="cont__text cont__text_regular">Adicione bolsas de cursos e faculdades do seu interesse e receba atualizações com as melhores ofertas disponíveis</p>
 
-          <Semestres onClick={this.handleClickSemestre} 
+          <Semestre onClick={this.handleClickSemestre} 
             selected={this.state.semestre} />
 
           <ListaDeFavoritas className="lista-fav" 

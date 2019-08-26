@@ -1,28 +1,6 @@
 import React from 'react';
 
 class ListaDeDisponiveis extends React.Component {
-  constructor(props) {
-    super(props);
-    
-    this.handleHeaderChange = this.handleHeaderChange.bind(this);
-  }
-  
-  handleHeaderChange(event) {
-    let bolsas = (this.props.bolsas).slice();
-
-    switch (event.target.value) {
-      case 'Nome da Faculdade':
-        break;
-      case 'Curso':
-        break;
-      case 'Preço':
-        break;
-      default:
-        break;
-    }
-    this.setState({listaDeDisponiveis: bolsas});
-  }
-
   render() {
     return (
       <React.Fragment>  
