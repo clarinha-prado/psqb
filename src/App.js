@@ -26,17 +26,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     
-    // mock1
-    var localStorage = window.localStorage;
-    localStorage.setItem('ListaDeFavoritas',  JSON.stringify(this.mock1()));
-
     // lê bolsas favoritas do repositório local
     var listaDeFavoritas = JSON.parse(localStorage.getItem('ListaDeFavoritas'));
 
     // armazena estado com bolsas favoritas, disponíveis, semestre selecionado 
     // coluna para ordenação da lista de bolsas disponíveis
     this.state = {semestre: "todos",
-      listaDeDisponiveis: this.carregarListaDeDisponiveis(),
+      listaDeDisponiveis: [],
       listaDeFavoritas: listaDeFavoritas,
       ordenacaoDisponiveis: 'Nome da Faculdade'};
 
@@ -55,37 +51,27 @@ class App extends React.Component {
 
 
 /*******************************************************************************
- * Carrega lista de bolsas disponíveis via http-get, acrescenta 2 atributos:
- * selected e id. Armazena lista no estado do componente.
+ * Carrega lista de bolsas disponíveis via http-get no estado do componente
  * 
- * @returns array de objetos com as bolsas disponíveis
+ * @returns -
  */
-  carregarListaDeDisponiveis() {
-    let bolsas = this.mock1();
-    let i;
+  componentDidMount() {
+  var thisReference = this;
+  var url = 'https://testapi.io/api/redealumni/scholarships'
 
-    // acrescenta as propriedades selected e índice a todos os itens
-    for (i in bolsas) {
-      bolsas[i].selected = false;
-      bolsas[i].id = i;
+  fetch(url)
+   .then(function(response){
+     console.log("status: " + response.status);
+    if (response.status >= 400) {
+      throw new Error("Não foi possível ler lista de bolsas.");
     }
-    
-    // ordena lista de bolsas por 'Nome da Faculdade'
-    bolsas.sort(function(a, b){
-      var x = a.university.name.toLowerCase();
-      var y = b.university.name.toLowerCase();
-      if (x < y) {return -1;}
-      if (x > y) {return 1;}
-      return 0;
-    });    
-    
-    return bolsas;
-  }
+    return response.json();
+  })
+   .then(function(data) {
+    thisReference.setState({listaDeDisponiveis: data.slice()});
+  });
 
-  mock1() {
-    var dados = require('./db.json');
-    return (dados);
-  }
+  }     
 
 
 
@@ -120,7 +106,7 @@ class App extends React.Component {
     // armazena nova lista no repositório local e no estado do componente
     var localStorage = window.localStorage;
     localStorage.setItem('ListaDeFavoritas',  JSON.stringify(bolsas));
-    this.setState({'listaDeFavoritas': bolsas});
+    this.setState({listaDeFavoritas: bolsas});
   }
 
   
@@ -133,10 +119,24 @@ class App extends React.Component {
  */
   handleClickAbrirModal(event) {
     let bolsas = (this.state.listaDeDisponiveis).slice();
-    let i;
+
+    // se o campo selected ainda não foi configurado, é porque o arquivo acabou
+    // de ser carregado e precisa ser ordenado
+    console.log("selected = " + this.state.listaDeDisponiveis[0].selected);
+    if (this.state.listaDeDisponiveis[0].selected === undefined) {
+      
+      // ordena lista de bolsas por 'Nome da Faculdade'
+      bolsas.sort(function(a, b){
+        var x = a.university.name.toLowerCase();
+        var y = b.university.name.toLowerCase();
+        if (x < y) {return -1;}
+        if (x > y) {return 1;}
+        return 0;
+      });    
+    }
     
     // atribui valor selected:false e id às bolsas
-    for (i in bolsas) {
+    for (let i in bolsas) {
       bolsas[i].selected = false;
       bolsas[i].id = i;
     }
