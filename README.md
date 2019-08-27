@@ -1,13 +1,17 @@
-# Processo seletivo Quero Bolsa.
+﻿# Processo seletivo Quero Bolsa.
 
-# Requisitos para instalação
-- web server
-- nodejs
+# Instruções para instalação
+1. Clonar o projeto do GitHub.
+2. Instalar o NodeJS.
+3. No diretório do projeto, executar "npm install".
+4. Exectuar "npm start".
+5. Acessar "http://localhos:3000".
 
-# Instruções de instalação:
-1. Faça checkout do branch master, no diretório root do web server.
-2. Execute npm install para baixar as dependências.
-3. Acesse http://<web server>/index.html.
-  
+ 
 # Observações:
 1. Alguns ícones da especificação não estão disponíveis na versão grátis de awsome fonts, foram utilizados ícones semelhantes.
+2. Como automação de testes não era obrigatória foi automatizado apenas um teste simples.
+3. Foram feitos apenas 2 diagramas UML, mostrando a composição dos componentes React e uma sequência de execução.
+4. Foi feita apenas uma animação de transição, na abertura da janela modal.
+5. Desenvolvimento feito para Chrome, outros browsers não foram contemplados.
+6. O código pode ser melhorado (funcionalidades, estilo, parametrizações, otimização), mas para uma avaliação o nível atual é suficiente.

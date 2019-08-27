@@ -88,13 +88,15 @@ class App extends React.Component {
     this.setState({filtro: filtro}, this.atualizarLista);
   }
     
-    atualizarLista() {
-//    console.log("filtro: semestre:"+this.state.semestre+
-//            "\ncidade:"+this.state.filtro.cidade+
-//            "\ncurso:"+this.state.filtro.curso+
-//            "\npresencial:"+this.state.filtro.presencial+
-//            "\nà distância:"+this.state.filtro.distancia+
-//            "\nvalor:"+this.state.filtro.valor);
+
+
+/*******************************************************************************
+ * Chamada de forma assíncrona, depois da atualização do estado dos campos de 
+ * filtro, para filtrar as bolsas disponíveis.
+ * 
+ * @returns -
+ */
+  atualizarLista() {
     
     let bolsas = (this.state.listaDeDisponiveis).slice();
 
@@ -108,8 +110,7 @@ class App extends React.Component {
           bolsas[i].visible = true;
           console.log(bolsas[i].course.name," - ", bolsas[i].course.kind);
       } else {
-        // se estiver selecionado deseleciona e decrementa a qtde de bolsas selecionadas
-        // --> disparar evento de unselect da bolsa q não atender ao critério
+        // bolsas fora do critério do filtro devem ser deselecionadas
         bolsas[i].visible = false;
         if (bolsas[i].selected) {
           bolsas[i].selected = false;
