@@ -4,8 +4,7 @@
   Bloco: lista de bolsas disponíveis
   Prefixo: lista-disp
   Elementos: container, row, text-header, button-container, select-container,
-             button (cancel / add)filter (definido em _filtro-bdisp), 
-             bdisp (definido em _bolsa-disponivel)
+             button (cancel / add) (enabled / disabled)
 
   Created on : Aug 12, 2019, 9:13:19 PM
   Author     : Clarinha
@@ -75,8 +74,18 @@
 
 .lista-disp__button-add {
   width: 155px;
+}
+
+.lista-disp__button-add_enabled {
   border-color: $amarelo-secundario;
   background-color: $amarelo-principal;
   color: $preto;
 }
+
+.lista-disp__button-add_disabled {
+  border-color: $preto-suave;
+  background-color: gainsboro;
+  color: $preto-suave;
+}
+
 

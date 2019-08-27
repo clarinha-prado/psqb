@@ -10,22 +10,9 @@ class Filtro extends React.Component {
   constructor(props) {
     super(props);
 
-    let bolsas = this.mock1();
-    let cursos = new Set();
-    let i;
-
-    cursos.add("");
-    for (i in bolsas) {
-      cursos.add(bolsas[i].course.name);
-    }
-    this.state = {listaDeCursos: Array.from(cursos).sort()};
+    this.state = {listaDeCursos: []};
   }
 
-  mock1() {
-    var dados = require('./db.json');
-    return (dados);
-  }
-  
   htmlListaDeCursos() {
     let htmlCode = [];
     
@@ -35,6 +22,32 @@ class Filtro extends React.Component {
     
     return htmlCode;
   }
+
+  /*******************************************************************************
+ * Carrega lista de cursos via http-get no estado do componente
+ * 
+ * @returns -
+ */
+  componentDidMount() {
+  let thisReference = this;
+  let url = 'https://testapi.io/api/redealumni/scholarships'
+
+  fetch(url)
+    .then(function(response){
+      if (response.status >= 400) {
+        throw new Error("Não foi possível ler lista de bolsas.");
+      }
+      return response.json();
+    })
+    .then(function(data) {
+      let cursos = new Set();
+      cursos.add("");
+      for (let i in data) {
+        cursos.add(data[i].course.name);
+      }
+      thisReference.setState({listaDeCursos: Array.from(cursos).sort()});
+    });
+  }     
 
   render() {
     let checkedBox = "fas fa-check-square fdisp__checkbox fdisp__checkbox_checked";
@@ -69,11 +82,11 @@ class Filtro extends React.Component {
             <label className="fdisp__field-caption">
               COMO VOCÊ QUER ESTUDAR?
             </label><br />
-            <i className={this.props.state.presencial ? checkedBox : uncheckedBox}
+            <i className={this.props.filtro.presencial ? checkedBox : uncheckedBox}
                id="presencial"
                onClick={this.props.onChange}></i>
             <span className="fdisp__checkbox-text">Presencial</span>
-            <i className={this.props.state.distancia ? checkedBox : uncheckedBox}
+            <i className={this.props.filtro.distancia ? checkedBox : uncheckedBox}
                id="distancia"
                onClick={this.props.onChange}></i>
             <span className="fdisp__checkbox-text">A distância</span>
@@ -82,10 +95,10 @@ class Filtro extends React.Component {
           <div className="fdisp__field-container">
             <label className="fdisp__field-caption">ATÉ QUANTO PODE PAGAR?</label><br />
               <span className="fdisp__moeda" id="valorFormatado">
-                {this.formatarValor(this.props.state.valor)}
+                {this.formatarValor(this.props.filtro.valor)}
               </span>
               <input type="range" min="100" max="10000" id="valor"
-                className="fdisp__slider" value={this.props.state.valor}
+                className="fdisp__slider" value={this.props.filtro.valor}
                 onChange={this.props.onChange}/>
           </div>
         </section>

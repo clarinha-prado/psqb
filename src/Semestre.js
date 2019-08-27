@@ -67,6 +67,10 @@ class Semestre extends React.Component {
       Object.assign(prox2, {'label': (2).toString() + "º semestre de " + (anoAtual + 1).toString()});
     }
 
+    // dados de teste são de 2019.2 e 2020.1 - então vou fixar estes valores aqui
+    prox1 = {'id': "2019.2", 'label': "2º semestre de 2019"};
+    prox2 = {'id': "2020.1", 'label': "1º semestre de 2020"};
+
     return [prox1, prox2];
   }
 };

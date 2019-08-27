@@ -39,50 +39,35 @@ class ListaDeDisponiveis extends React.Component {
     let checkedBox = "fas fa-check-square fdisp__checkbox fdisp__checkbox_checked";
     let uncheckedBox = "far fa-square fdisp__checkbox fdisp__checkbox_unchecked";
 
-    let bolsas = this.filtrarBolsas(this.props.bolsas);
+    let bolsas = this.props.bolsas;
     let htmlCode = []; 
     let i;
 
     for (i in bolsas) {
-      htmlCode.push( 
-        <article key={i} className="lista-disp__row">
-          <div>
-            <i className={bolsas[i].selected ? checkedBox : uncheckedBox}
-              onClick={this.props.onClick} id={bolsas[i].id}>
-            </i>
-          </div>
-          <div className="bdisp__logo-container">
-            <img className="bdisp__logo" src={bolsas[i].university.logo_url} alt={bolsas[i].university.name}/>
-          </div>
-          <div className="bdisp__curso-container">{bolsas[i].course.name}<br />
-            <span className="bdisp__tipo-curso">{bolsas[i].course.level}</span>
-          </div>
-          <div className="bdisp__preco-container">Bolsa de 
-            <span className="bdisp__preco">
-              {Math.round(bolsas[i].discount_percentage)}%<br />
-              R${(bolsas[i].price_with_discount).toLocaleString('pt-br', {minimumFractionDigits: 2})}/mês</span>
-          </div>
-        </article>
-      );
-    }
-    return htmlCode;
-  }
-
-  filtrarBolsas(bolsas) {
-    let bolsasFiltradas = [];
-    let i;
-
-    for (i in bolsas) {
-      if ((this.props.semestre === "todos" || this.props.semestre === bolsas[i].enrollment_semester) &&
-        (this.props.state.cidade === ""  || (this.props.state.cidade).toUpperCase() === (bolsas[i].campus.city).toUpperCase()) &&
-        (this.props.state.curso === "" || this.props.state.curso === bolsas[i].course.name) &&
-        ((this.props.state.presencial && bolsas[i].course.kind === "Presencial") || 
-        (this.props.state.distancia && bolsas[i].course.kind === "EaD")) &&
-        (this.props.state.valor >= Number(bolsas[i].price_with_discount))) {
-          bolsasFiltradas.push(bolsas[i]);
+      if (bolsas[i].visible) {
+        htmlCode.push( 
+          <article key={i} className="lista-disp__row">
+            <div>
+              <i className={bolsas[i].selected ? checkedBox : uncheckedBox}
+                onClick={this.props.onClick} id={bolsas[i].id}>
+              </i>
+            </div>
+            <div className="bdisp__logo-container">
+              <img className="bdisp__logo" src={bolsas[i].university.logo_url} alt={bolsas[i].university.name}/>
+            </div>
+            <div className="bdisp__curso-container">{bolsas[i].course.name}<br />
+              <span className="bdisp__tipo-curso">{bolsas[i].course.level}</span>
+            </div>
+            <div className="bdisp__preco-container">Bolsa de 
+              <span className="bdisp__preco">
+                {Math.round(bolsas[i].discount_percentage)}%<br />
+                R${(bolsas[i].price_with_discount).toLocaleString('pt-br', {minimumFractionDigits: 2})}/mês</span>
+            </div>
+          </article>
+        );
       }
     }
-    return bolsasFiltradas;
+    return htmlCode;
   }
 }
 

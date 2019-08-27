@@ -33,9 +33,9 @@ class ListaDeFavoritas extends React.Component {
   }
   
   htmlListaDeFavoritas() {
-    var bolsas = this.props.bolsas;
-    var htmlCode = []; 
-    var i;
+    let bolsas = this.props.bolsas;
+    let htmlCode = []; 
+    let i;
 
     for (i in bolsas) {
       if ((this.props.semestre === "todos") || (bolsas[i].enrollment_semester === this.props.semestre)) {
