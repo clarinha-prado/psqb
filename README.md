@@ -1,4 +1,4 @@
-﻿# Processo seletivo Quero Bolsa.
+﻿# Processo seletivo Quero Bolsa
 
 # Instruções para instalação
 1. Clonar o projeto do GitHub.
@@ -14,4 +14,4 @@
 3. Foram feitos apenas 2 diagramas UML, mostrando a composição dos componentes React e uma sequência de execução.
 4. Foi feita apenas uma animação de transição, na abertura da janela modal.
 5. Desenvolvimento feito para Chrome, outros browsers não foram contemplados.
-6. O código pode ser melhorado (funcionalidades, estilo, parametrizações, otimização), mas para uma avaliação o nível atual é suficiente.
+6. O código permite a avaliação dos conhecimentos solicitados.
